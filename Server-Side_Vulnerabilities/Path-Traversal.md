@@ -325,3 +325,33 @@ displayed).</p>
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/9de1efc2-6d8f-4b11-a525-9b93ed9d05d3)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/0e391f00-3562-4d6d-91e4-1190dcb5f53a)
 
+<h1>Lab 5: File path traversal, validation of start of path</h1>
+
+**This lab contains a path traversal vulnerability in the display of product images. The application transmits the full file path via a request parameter, and validates that the supplied path starts with the expected folder. To solve the lab, retrieve the contents of the /etc/passwd file.** 
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/2f07d925-82ed-46c3-9d46-3fe573709a04)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/5dfb9184-959a-48d5-bdd8-c71d6fa91ef4)
+
+<h2>Products are displayed with image files so we will follow the image links</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/595d6c66-2a41-49aa-9dbd-0232c531b6f8)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/30bb87cc-a764-49be-8301-8fbb9f5dea25)
+
+<h2>This is the image File Location</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/5d534e18-1d92-4fcd-a240-a32418e26349)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/91bede1f-83c5-4f36-8623-ddf0cb2a4091)
+
+<h2>Let's try making a request for the /etc/passwd file while including the base directory that holds images /var/www/images/../../../etc/passwd</h2>
+
+**My Attempt was successful because the web application simply verifies that the base directory that holds images is present in the user input, but doesn't verify what file it displays**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/bc4feb5d-575b-4977-8391-4d970bdf5c53)
+
+<h2>Copying and Decoding the contents of the file from Base64 to clear-text</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/3cc68ac5-7370-4029-87c4-95eeb285329a)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/18664bf2-19de-4c48-8b01-dace5dc05054)
+
