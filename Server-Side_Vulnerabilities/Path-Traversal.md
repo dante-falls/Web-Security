@@ -11,7 +11,31 @@
 
 A **path traversal attack (also known as directory traversal)** aims to access files and directories that are stored outside the web root folder. By manipulating variables that reference files with “dot-dot-slash (../)” sequences and its variations or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system including application source code or configuration and critical system files. It should be noted that access to files is limited by system operational access control (such as in the case of locked or in-use files on the Microsoft Windows operating system).
 
-This attack is also known as “dot-dot-slash”, “directory traversal”, “directory climbing” and “backtracking”. 
+<h2>Explanation</h2>
+Imagine a shopping application that displays images of items for sale. This might load an image using the following HTML:
+
+<code class="code-scrollable">&lt;img src=&quot;/loadImage?filename=218.png&quot;&gt;</code>
+
+The <code>loadImage</code> URL takes a <code>filename</code> parameter and returns the contents of the specified file. The image files are stored on disk in the location <code>/var/www/images/</code>. To return an image, the application appends the requested filename to this base directory and uses a filesystem API to read the contents of the file. In other words, the application reads from the following file path:
+
+<code class="code-scrollable">/var/www/images/218.png</code><p>
+
+This application implements no defenses against path traversal attacks. As a result, an attacker can request the following URL to retrieve the <code>/etc/passwd</code> file from the server's filesystem:
+
+<code class="code-scrollable">https://insecure-website[.]com/loadImage?filename=../../../etc/passwd</code>
+
+This causes the application to read from the following file path:
+
+<code class="code-scrollable">/var/www/images/../../../etc/passwd</code>
+
+The sequence <code>../</code> is valid within a file path, and means to step up one level in the directory structure. The three consecutive <code>../</code> sequences step up from <code>/var/www/images/</code> to the filesystem root, and so the file that is actually read is:
+
+<code class="code-scrollable">/etc/passwd</code>
+  
+On Unix-based operating systems, this is a standard file containing details of the users that are registered on the server, but an attacker could retrieve other arbitrary files using the same technique.
+On Windows, both <code>../</code> and <code>..\</code> are valid directory traversal sequences. The following is an example of an equivalent attack against a Windows-based server:
+
+<code class="code-scrollable">https://insecure-website[.]com/loadImage?filename=..\..\..\windows\win.ini</code>
 
 <h3 id="request-variations">Request variations</h3>
 
