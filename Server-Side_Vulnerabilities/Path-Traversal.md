@@ -190,3 +190,35 @@ application, it is much easier for the attacker to guess the correct
 locations (e.g. path to the file with a source code, which then may be
 displayed).</p>
 
+<h1>Lab: File path traversal, simple case</h1>
+
+**This lab contains a path traversal vulnerability in the display of product images. To solve the lab, retrieve the contents of the /etc/passwd file.**
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/18e7b0f9-8d89-4f64-8d7b-7aeec2bcc7bf)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/db33816b-2cd4-4852-ae70-6523c9ac1513)
+
+<h2>How Products Are Displayed</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/8b068b94-716c-4d2a-8bfa-8da4bf0d1300)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/9cec0f7d-4f3f-411a-8beb-c9fa1a1aa726)
+
+<h2>Products are displayed as image files. You can copy the image link and go to webpage that hosts the image</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/0a279ba0-a4fe-4025-8bd9-5820dd309b89)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/310e4325-3b15-4bad-bfc7-102c0ecfcf9d)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/8dfdb53e-2d66-49b3-b5a3-c883c7c194d9)
+
+<h2>Using The Developer Options To Request A File From A Different Directory</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/2c6f2a00-8c65-467c-a657-b9d3e6d73d25)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/bfa3e9ce-9b07-4ee4-b007-10550144ba18)
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/81c944e6-472b-4e7d-acb1-dba964d3675c)
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/2ad26994-e9e6-42ea-8adc-79093418757d)
+
+
+
+
