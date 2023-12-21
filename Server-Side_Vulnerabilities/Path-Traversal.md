@@ -284,3 +284,44 @@ displayed).</p>
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/1fd03bbd-da68-4a13-8a5d-11e0748b4d95)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/ffac51ce-4809-44a9-98b0-391ec4edacc7)
+
+<h1>Lab 4: File path traversal, traversal sequences stripped with superfluous URL-decode</h1>
+
+**This lab contains a path traversal vulnerability in the display of product images. The application blocks input containing path traversal sequences. It then performs a URL-decode of the input before using it. To solve the lab, retrieve the contents of the /etc/passwd file.** 
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/de2c49ea-a32a-4d06-a5ca-a80b91085f9e)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/4f3a5708-a184-49f9-b145-03d8385ce4a8)
+
+
+<h2>Products are displayed with image files so we will follow the image links</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/9fddcf3c-3ff7-4071-bb6d-bb55f13f7b5b)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/19215a51-ca62-41bf-8c84-004d9b99a918)
+
+<h2>This is the image File Location</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/f881e693-066a-499f-ba89-b3b2bf41c838)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/ad418eda-45dc-41bd-8a45-7de2d03efee7)
+
+<h2>Let's try making a request for the etc/passwd file by including the base directory and traversing towards the file/</h2>
+
+**This attempt failed because traversal sequences are stripped from user input**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/89c09bda-119b-4c4e-9a39-84733af3382b)
+
+**This attempt failed because I used single url encoding for ../ and the superfluous url-decoding converted my input into ../../../etc/passwd**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/07b91b8b-abb9-4431-acd8-bee7f55d4755)
+
+
+**My Successful Attempt to retrieve /etc/passwd was with a double url encoding of %252e%252e%252f%252e%252e%252f%252e%252e%252f/etc/passwd**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/2e14df46-a258-49f9-864e-f9c326df4ecd)
+
+<h2>Copying and Decoding the contents of the file from Base64 to clear-text</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/9de1efc2-6d8f-4b11-a525-9b93ed9d05d3)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/0e391f00-3562-4d6d-91e4-1190dcb5f53a)
+
