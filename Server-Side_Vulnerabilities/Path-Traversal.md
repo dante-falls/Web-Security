@@ -37,7 +37,7 @@ On Windows, both <code>../</code> and <code>..\</code> are valid directory trave
 
 <code class="code-scrollable">https://insecure-website[.]com/loadImage?filename=..\..\..\windows\win.ini</code>
 
-<h3 id="request-variations">Request variations</h3>
+<h3 id="request-variations">Path Traversal Variations</h3>
 
 <p>Encoding and double encoding:</p>
 
