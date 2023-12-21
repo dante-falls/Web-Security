@@ -355,3 +355,35 @@ displayed).</p>
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/3cc68ac5-7370-4029-87c4-95eeb285329a)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/18664bf2-19de-4c48-8b01-dace5dc05054)
 
+<h1>Lab 6: File path traversal, validation of file extension with null byte bypass</h1>
+
+**This lab contains a path traversal vulnerability in the display of product images. The application validates that the supplied filename ends with the expected file extension. To solve the lab, retrieve the contents of the /etc/passwd file.** 
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e016bb8f-ddf0-4fe3-902c-c774b049de4d)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e3ddbb2d-1755-4b76-998f-64346854c7fa)
+
+<h2>Products are displayed with image files so we will follow the image links</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/aa44f3c2-cd93-49cb-84f2-95fcfe66b042)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/7b9d81a9-2eb0-452e-92f3-145a735cf964)
+
+<h2>This is the image File Location</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/dfa07376-bd82-4de7-a292-bbd700a5a170)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/f4d8a831-36aa-4c96-b2d9-c54b9998997c)
+
+<h2>Let's try making a request for the /etc/passwd file but using NULL BYTE (%00) to make it look like we are requesting an image file</h2>
+
+**My Attempt was successful because the web application simply verifies that file being requested is an image file, and we used %00 to represent an image file**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/f1551e37-5653-4b65-b530-521df0ef9208)
+
+<h2>Copying and Decoding the contents of the file from Base64 to clear-text</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e9f76347-d530-4e78-97a0-4049ec08552f)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/b01bea9d-47f1-428b-956f-5bace2f6b9ae)
+
+
+
