@@ -220,6 +220,31 @@ displayed).</p>
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/81c944e6-472b-4e7d-acb1-dba964d3675c)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/2ad26994-e9e6-42ea-8adc-79093418757d)
 
+<h1>Lab 2: File path traversal, traversal sequences blocked with absolute path bypass</h1>
 
+**This lab contains a path traversal vulnerability in the display of product images.The application blocks traversal sequences but treats the supplied filename as being relative to a default working directory. To solve the lab, retrieve the contents of the /etc/passwd file.**
 
+<h2>The Vulnerable Website</h2>
 
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/51671e89-59ce-4aea-8eb5-9b2c4a5f9ad6)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/166034f3-04e0-452c-b8eb-940a7a6abcca)
+
+<h2>Products are displayed with image files so we will follow the image links</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/54553832-c9a2-4c3f-8405-14e860414d10)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/1e9cb5ff-c486-450c-b997-5feb5d9b1b85)
+
+<h2>This is the image File Location</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e5d951d2-417e-4afb-aad4-4f6f8ff15a11)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/faef163d-a600-409a-8dd4-9b897c5a60c6)
+
+<h2>Let's try making a request for the /etc/passwd file using the absolute path without any traversal sequences</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/2869c2b7-5379-4fee-836d-1e11ec494412)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/b207ba4e-95c8-4da8-ba2b-700fe16828b0)
+
+<h2>Copying and Decoding the contents of the file from Base64 to clear-text</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/84da12ef-12db-4bd2-98b4-88b65e97f21d)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/7f7af9c9-d4ef-40d2-be6c-a03c32e29c8b)
