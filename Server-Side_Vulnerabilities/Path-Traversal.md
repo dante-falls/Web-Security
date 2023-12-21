@@ -210,13 +210,14 @@ displayed).</p>
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/310e4325-3b15-4bad-bfc7-102c0ecfcf9d)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/8dfdb53e-2d66-49b3-b5a3-c883c7c194d9)
 
-<h2>Using The Developer Options To Request A File From A Different Directory</h2>
+<h2>Using The Developer Options To Access A File By Traversing Directories</h2>
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/2c6f2a00-8c65-467c-a657-b9d3e6d73d25)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/bfa3e9ce-9b07-4ee4-b007-10550144ba18)
 
-![image](https://github.com/dante-falls/Web-Security/assets/29386604/81c944e6-472b-4e7d-acb1-dba964d3675c)
+<h2>Decoding The Contents Of The File From Base64 To Clear-text</h2>
 
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/81c944e6-472b-4e7d-acb1-dba964d3675c)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/2ad26994-e9e6-42ea-8adc-79093418757d)
 
 
