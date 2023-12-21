@@ -248,3 +248,39 @@ displayed).</p>
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/84da12ef-12db-4bd2-98b4-88b65e97f21d)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/7f7af9c9-d4ef-40d2-be6c-a03c32e29c8b)
+
+<h1>Lab 3: File path traversal, traversal sequences stripped non-recursively</h1>
+
+**This lab contains a path traversal vulnerability in the display of product images. The application strips path traversal sequences from the user-supplied filename before using it. To solve the lab, retrieve the contents of the /etc/passwd file.** 
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/0d0a33b9-71ab-4c5f-9cfc-8b3ec2cfb469)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/6fbdb149-d733-449e-9c3e-d2f62926ae5c)
+
+<h2>Products are displayed with image files so we will follow the image links</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/a563a2a0-7557-4dc9-8fe7-e856109d7791)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/96465530-434b-43e4-9c20-724b66d65b40)
+
+<h2>This is the image File Location</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/31e231d4-7684-4f62-8d62-5bfbfdbce42f)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/4118526b-59d5-4476-971b-c4041127609c)
+
+<h2>Let's try making a request for the ../../../etc/passwd file by encoding the ../</h2>
+
+**Take notice that a regular ../../../etc/passwd attempt failes because traversal sequences are in fact stripped. I tried a few methods of url encoding and double url encoding, none worked**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/6e5d076d-126d-499d-8999-8008b7b05676)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/ec2b82fd-180f-4f26-86c9-18a642341b28)
+
+**I finally got a successful response for the /etc/passwd when I used "....//....//....//etc/passwd" in my GET Request to the web application.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/2ae65b33-6db3-46b0-8b6e-cf066fa0e78f)
+
+
+<h2>Copying and Decoding the contents of the file from Base64 to clear-text</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/1fd03bbd-da68-4a13-8a5d-11e0748b4d95)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/ffac51ce-4809-44a9-98b0-391ec4edacc7)
