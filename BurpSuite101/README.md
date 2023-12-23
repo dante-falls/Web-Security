@@ -49,7 +49,7 @@
 
 <h2>Navigating The Burp Suite Interface</h2>
 
-**To navigate the Burp Suite interface and use the different modules, simply click the tabs at the top to switch in between modules. Reference the image below.**
+**To navigate the Burp Suite interface and use the different modules/tools, simply click the tabs at the top to switch in between modules. Reference the image below where I switch to the "Intruder" module.**
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/871e93f8-d4eb-404b-b381-14725a79c54d)
 
