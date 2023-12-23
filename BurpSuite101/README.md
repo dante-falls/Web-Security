@@ -22,3 +22,35 @@
 
 **Sequencer:** Sequencer is typically employed when assessing the randomness of tokens, such as session cookie values or other supposedly randomly generated data. If the algorithm used for generating these values lacks secure randomness, it can expose avenues for devastating attacks.
 
+
+<h1>The Burp Suite Interface</h1>
+
+**Disk-based projects are only supported on Burp Suite Professional, so we can simply press "Next" to create a Temporary Project. Reference the image below.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/a97c248c-9165-4887-8484-cfb9be4460b5)
+
+**The next page allows you to choose a configuration file to load from. I will choose "Use Burp Defaults" for this demonstration because I don't have any configuration files to load from. You can click "Start Burp" once you've figured out how you want to load up Burp Suite. Reference the image below.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/7d8de475-0a56-440f-b74c-33c3a0c0a5c1)
+
+<h2>The Burp Suite Dashboard</h2>
+
+**Tasks:** The Tasks menu allows you to define background tasks that Burp Suite will perform while you use the application. In Burp Suite Community, the default task is “Live Passive Crawl” and it automatically logs visited pages.
+
+**Event log:** The Event log furnishes details on activities executed by Burp Suite, including the starting of the proxy and specifics on connections established via Burp.
+
+**Issue Activity:** This section is specific to Burp Suite Professional. It displays the vulnerabilities identified by the automated scanner, ranked by severity and filterable based on the certainty of the vulnerability.
+
+**Advisory:** The Advisory section provides more detailed information about the identified vulnerabilities, including references and suggested remediations. This information can be exported into a report. In Burp Suite Community, this section may not show any vulnerabilities ☹️
+
+**Reference the image below to see the Dashboard of the Burp Suite Community Edition**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/17777fdd-0247-4b62-abd3-588d27f67af1)
+
+<h2>Navigating The Burp Suite Interface</h2>
+
+**To navigate the Burp Suite interface and use the different modules, simply click the tabs at the top to switch in between modules. Reference the image below.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/871e93f8-d4eb-404b-b381-14725a79c54d)
+
+
