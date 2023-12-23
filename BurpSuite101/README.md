@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/9aAQG1c.png" height="300%" width="300%" alt="Burp Suite Picture"/>
 
-**This folder is dedicated to learning about Burp Suite's Community Edition (the free version).**
+**This folder is dedicated to learning about Burp Suite's Community Edition (the free version). All information on this page can be found at https://tryhackme.com/room/burpsuitebasics**
 
 <h2>What is Burp Suite?</h2>
 
