@@ -385,5 +385,21 @@ displayed).</p>
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/e9f76347-d530-4e78-97a0-4049ec08552f)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/b01bea9d-47f1-428b-956f-5bace2f6b9ae)
 
+<h1>Using Burp Suite For Lab 6 [File path traversal, validation of file extension with null byte bypass]</h1>
 
+<h2>The Vulnerable Website</h2>
 
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/c77d7520-d796-4a2c-bf71-ca3ba4c8da96)
+
+<h2>When you make a request for the image file, Burp Proxy will intercept the request and you can change the values and input the nullbyte value before the file extension</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/1e0c7f24-037b-4d04-a0ff-786c90d993b6)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/9d4e2e0b-7bc4-4654-86fd-2427a4e6384a)
+
+<h2>You can see that the request was successful and the browser is trying to render the /etc/passwd file as an image file</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/a606c010-cdcc-4afa-b3c7-57c44c8fe994)
+
+<h2>Burp Suite will render the /etc/passwd file and you can now view the sensitive information within</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/1fd2cf47-bce7-4d36-b32d-ac5eaf6e8177)
