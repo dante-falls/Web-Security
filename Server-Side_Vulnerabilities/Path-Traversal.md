@@ -396,7 +396,7 @@ displayed).</p>
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/1e0c7f24-037b-4d04-a0ff-786c90d993b6)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/9d4e2e0b-7bc4-4654-86fd-2427a4e6384a)
 
-<h2>You can see that the request was successful and the browser is trying to render the /etc/passwd file as an image file</h2>
+<h2>You can see that the request was successful and the browser is trying to render the /etc/passwd file as an image</h2>
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/a606c010-cdcc-4afa-b3c7-57c44c8fe994)
 
