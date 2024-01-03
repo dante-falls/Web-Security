@@ -125,11 +125,11 @@ This lab has an admin panel at /admin, which identifies administrators using a f
 
 <h2>Analyzing The Admin Cookie</h2>
 
-**If you open the developer tools and look at the request that is made when you log into your account, you will notice a cookie that let's the web server determine if you are an admin or not. We can try to access the /admin page with this cookie as "true" and see if we can get access.**
+**If you open the developer tools and look at the request that is made when you log into your account, you will notice a cookie that let's the web server determine if you are an admin or not. We can set this cookie to "true" and try to get access to the /admin page.**
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/18cd9509-d3a3-48db-a20c-232389193ecc)
 
-<h2>Adding The Admin Cookie And Accessing The /admin page</h2>
+<h2>Setting The Admin Cookie To True And Accessing The /admin page</h2>
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/400c5f78-05a2-48ff-9ed9-39ff75bc2880)
 
