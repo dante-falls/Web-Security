@@ -58,7 +58,7 @@ Understanding and addressing these access control vulnerabilities are crucial fo
 
 <h1>Lab 1: Unprotected Admin Functionality [WITHOUT BurpSuite]</h1>
 
-This lab has an unprotected admin panel. Solve the lab by deleting the user carlos. Using BurpSuite for this lab is inefficient because there are no restrictions to the administrator-panel.
+This lab has an unprotected admin panel. Solve the lab by deleting the user carlos. Using BurpSuite for this lab is inefficient because you don't need to proxy any requests to exploit the access vulnerability.
 
 <h2>The Vulnerable Website</h2>
 
@@ -74,3 +74,30 @@ This lab has an unprotected admin panel. Solve the lab by deleting the user carl
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/38788d3c-bcb4-4c4e-bbb0-ca7d788c0d30)
 
+<h1>Lab 2: Unprotected Admin Functionality With Unpredictable URL [WITHOUT BurpSuite]</h1>
+
+This lab has an unprotected admin panel. It's located at an unpredictable location, but the location is disclosed somewhere in the application. Solve the lab by accessing the admin panel, and using it to delete the user carlos. Using BurpSuite for this lab is inefficient because you don't need to proxy any requests to exploit the access vulnerability.
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/250cfa1a-5daf-48bd-95a8-e1e358a4fa70)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/18b7b6d2-ae60-453e-a27b-0dd631889e62)
+
+<h2>Finding The Vulnerable Admin Panel</h2>
+
+**First we will try to access the /administrator-panel directly through the URL. As you can see, the web server actually tries to access the requested resource, but it is "Not Found".** 
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/ab96a6f1-eb8a-4061-9483-107c42ab116b)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/280f644f-9378-439e-a65c-1aebd778771a)
+
+<h2>Checking The Page Source For Clues</h2>
+
+**You can see in the Page Source that there is some code that made it to production that actually leaks the location of the admin-panel which is: "/admin-bi19c3"**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/0689cbae-dcda-4be3-9b47-fa1b3733e63c)
+
+
+<h2>Navigating To The Admin Panel ( /admin-bi19c3 ) And Deleting The User "Carlos" [LAB COMPLETE]</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/912c8cd0-e3ef-4c51-86fb-71cee94e1b7d)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e90f2831-c3f9-487f-9c40-6b6c5a2918a3)
