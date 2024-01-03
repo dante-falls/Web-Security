@@ -114,6 +114,7 @@ This lab has an admin panel at /admin, which identifies administrators using a f
 <h2>Navigating Towards The Admin Panel (/admin)</h2>
 
 **Here we try to access the /admin page on the website and we are denied access because we are not logged in as an admin**
+
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/810f940b-04e7-42b4-9407-7204b13e282a)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/15a50497-bcef-4d65-b446-2694fa61f345)
 
@@ -143,3 +144,44 @@ This lab has an admin panel at /admin, which identifies administrators using a f
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/3afbca62-2602-4375-8c2e-70e09e3402ff)
 
+<h1>Lab 7: User ID controlled by request parameter with data leakage in redirect [WITH BurpSuite]</h1>
+
+This lab contains an access control vulnerability where sensitive information is leaked in the body of a redirect response. To solve the lab, obtain the API key for the user carlos and submit it as the solution. You can log in to your own account using the following credentials: wiener:peter  
+
+<h2>The Vulnerable Website</h2>
+
+**For this lab, I will use the Burp Proxy to intercept requests so I can manipulate the values with burp repeater. Keep in mind, I am manually forwarding all requests, but I will only show the most important requests in BurpSuite.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/d32019e1-1c82-43d1-a492-780278d26c1f)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e252ea78-56c7-45d6-bfc3-e7fee45b17a4)
+
+<h2>Logging Into Our Trusted Account wiener:peter</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/1c4fc5c9-18ae-4ebe-8f34-9af7dfbea17d)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/dd1b78dd-0437-4c49-9eee-783c33419f3f)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/aa5bd0d8-8117-42ae-8ddd-5eb029d24eb6)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/562bf4d8-274c-4cec-86ea-cac7701c6c6c)
+
+<h2>Successful Login Of My Account Page With My API Key</h2>
+
+**I have now successfully logged into my wiener:peter account and can see my API Key.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/2ba8609f-df12-489c-b596-ab8181e16e44)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/84801f72-7207-48ae-b715-87248a6921c6)
+
+<h2>Sending the /my-account?id=wiener request to Burp Repeater so we can change the values and resend the request</h2>
+
+**If you look at the successful /my-account?id=wiener request in the BurpSuite Proxy HTTP History, you will notice we can manipulate the GET request and try to get carlos's account, instead.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/ab8481fa-6274-41f8-a3b8-06788a3339df)
+
+<h2>Changing the request to /my-account?id=carlos in Burp Repeater</h2>
+
+**When you send manipulate the request in Burp Repeater and send it, you will successfully get access to Carlos's acccount and API Key**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/da3a353f-1f3b-4caf-b4df-9bb6d790ed90)
+
+<h2>Submitting Carlos's API Key [LAB COMPLETE]</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/dae86699-2060-4796-9839-c3d145e3a7c0)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/08039804-8f9f-4438-afc4-ac4fadb3566e)
