@@ -177,7 +177,7 @@ This lab contains an access control vulnerability where sensitive information is
 
 <h2>Changing the request to /my-account?id=carlos in Burp Repeater</h2>
 
-**When you send manipulate the request in Burp Repeater and send it, you will successfully get access to Carlos's acccount and API Key**
+**When you manipulate the request in Burp Repeater and send it, you will successfully get access to Carlos's acccount and API Key**
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/da3a353f-1f3b-4caf-b4df-9bb6d790ed90)
 
