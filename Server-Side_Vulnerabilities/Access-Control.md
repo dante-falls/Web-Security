@@ -54,7 +54,7 @@ Consequence: Breach of confidentiality as users can access and view content that
 
 Understanding and addressing these access control vulnerabilities are crucial for building secure web applications, and proper implementation involves a combination of authentication, authorization, and regular security audits. Always refer to the specific security guidelines and best practices relevant to the programming languages and frameworks you are using.
 
-<h1>:⚠️Access Control Vulnerability Labs by PortSwigger:👨‍🔬💻</h1>
+<h1>⚠️Access Control Vulnerability Labs by PortSwigger:👨‍🔬💻</h1>
 
 <h1>Lab 1: Unprotected Admin Functionality [WITHOUT BurpSuite]</h1>
 
