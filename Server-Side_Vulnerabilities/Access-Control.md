@@ -56,7 +56,7 @@ Understanding and addressing these access control vulnerabilities are crucial fo
 
 <h1>⚠️Access Control Vulnerability Labs by PortSwigger👨‍🔬💻</h1>
 
-<h1>Lab 1: Unprotected Admin Functionality [WITHOUT BurpSuite]</h1>
+<h1>Lab: Unprotected Admin Functionality [WITHOUT BurpSuite]</h1>
 
 This lab has an unprotected admin panel. Solve the lab by deleting the user carlos. Using BurpSuite for this lab is inefficient because you don't need to proxy any requests to exploit the access vulnerability.
 
@@ -74,7 +74,7 @@ This lab has an unprotected admin panel. Solve the lab by deleting the user carl
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/38788d3c-bcb4-4c4e-bbb0-ca7d788c0d30)
 
-<h1>Lab 2: Unprotected Admin Functionality With Unpredictable URL [WITHOUT BurpSuite]</h1>
+<h1>Lab: Unprotected Admin Functionality With Unpredictable URL [WITHOUT BurpSuite]</h1>
 
 This lab has an unprotected admin panel. It's located at an unpredictable location, but the location is disclosed somewhere in the application. Solve the lab by accessing the admin panel, and using it to delete the user carlos. Using BurpSuite for this lab is inefficient because you don't need to proxy any requests to exploit the access vulnerability.
 
