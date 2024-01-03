@@ -30,9 +30,25 @@ Imagine you're working on the security aspects of an online banking system, wher
    - **Example:** Alice can access other users' account details by manipulating the account number in the URL.
    - **Consequence:** Breach of confidentiality as users can access and modify data they shouldn't have access to.
 
+<h2>Example(s)</h2>
+
+**Scenario**: Regular users have access to administrative functionalities without proper checks.
+
+Vulnerability: Alice, a regular user, discovers she can access the admin panel at https://insecure-blog[.]com/admin-panel and perform actions meant for administrators.
+
+Consequence: Unauthorized users can manipulate sensitive settings and potentially disrupt the website or access confidential information.
+
+**Scenario**: Users can access other users' blog posts without proper validation.
+
+Vulnerability: Alice can view another user's private blog post by directly entering the post ID in the URL: https://insecure-blog[.]com/view-post?post_id=789.
+
+Consequence: Breach of confidentiality as users can access and view content that should be restricted.
+
 **Sources:**
 1. OWASP (Open Web Application Security Project) - [Access Control Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html)
 2. "Web Application Security: A Beginner's Guide" by Bryan Sullivan and Vincent Liu. (Book)
 3. "The Web Application Hacker's Handbook" by Dafydd Stuttard and Marcus Pinto. (Book)
 
 Understanding and addressing these access control vulnerabilities are crucial for building secure web applications, and proper implementation involves a combination of authentication, authorization, and regular security audits. Always refer to the specific security guidelines and best practices relevant to the programming languages and frameworks you are using.
+
+
