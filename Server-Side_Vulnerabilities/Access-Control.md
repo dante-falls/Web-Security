@@ -1,5 +1,8 @@
 <h1>Access Control Vulnerabilities</h1>
 
+![What-are-the-seven-categories-of-access-control-1024x439](https://github.com/dante-falls/Web-Security/assets/29386604/1860defd-cd3b-4440-b501-fa69ea7b214a)
+
+
 **ChatGPT Explanation:**
 
 Access control vulnerabilities are security flaws that arise when a system fails to properly enforce restrictions on who can access or manipulate its resources. In the context of web security, access control is crucial to prevent unauthorized users from gaining access to sensitive information or performing actions they shouldn't be allowed to do.
