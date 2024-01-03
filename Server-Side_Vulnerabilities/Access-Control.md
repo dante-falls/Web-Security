@@ -54,4 +54,23 @@ Consequence: Breach of confidentiality as users can access and view content that
 
 Understanding and addressing these access control vulnerabilities are crucial for building secure web applications, and proper implementation involves a combination of authentication, authorization, and regular security audits. Always refer to the specific security guidelines and best practices relevant to the programming languages and frameworks you are using.
 
+<h1>:⚠️Access Control Vulnerability Labs by PortSwigger:👨‍🔬💻</h1>
+
+<h1>Lab 1: Unprotected Admin Functionality [WITHOUT BurpSuite]</h1>
+
+This lab has an unprotected admin panel. Solve the lab by deleting the user carlos.
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/a8d99707-de6f-48dd-9762-84e70778c6ed)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/5cb2739f-6e7e-45a0-9ec4-b7356d9d95ff)
+
+<h2>Finding The Vulnerable Admin Panel</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/5e13f61a-96ba-4494-8d60-a8cf1860de8b)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/21c1ef17-303d-431f-9ae2-483527608c80)
+
+<h2>Deleting The User "Carlos" [LAB COMPLETE]</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/38788d3c-bcb4-4c4e-bbb0-ca7d788c0d30)
 
