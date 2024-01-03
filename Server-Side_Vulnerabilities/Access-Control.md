@@ -56,7 +56,7 @@ Understanding and addressing these access control vulnerabilities are crucial fo
 
 <h1>⚠️Access Control Vulnerability Labs by PortSwigger👨‍🔬💻</h1>
 
-<h1>Lab: Unprotected Admin Functionality [WITHOUT BurpSuite]</h1>
+<h1>Lab 1: Unprotected Admin Functionality [WITHOUT BurpSuite]</h1>
 
 This lab has an unprotected admin panel. Solve the lab by deleting the user carlos. Using BurpSuite for this lab is inefficient because you don't need to proxy any requests to exploit the access vulnerability.
 
@@ -74,7 +74,7 @@ This lab has an unprotected admin panel. Solve the lab by deleting the user carl
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/38788d3c-bcb4-4c4e-bbb0-ca7d788c0d30)
 
-<h1>Lab: Unprotected Admin Functionality With Unpredictable URL [WITHOUT BurpSuite]</h1>
+<h1>Lab 2: Unprotected Admin Functionality With Unpredictable URL [WITHOUT BurpSuite]</h1>
 
 This lab has an unprotected admin panel. It's located at an unpredictable location, but the location is disclosed somewhere in the application. Solve the lab by accessing the admin panel, and using it to delete the user carlos. Using BurpSuite for this lab is inefficient because you don't need to proxy any requests to exploit the access vulnerability.
 
@@ -101,3 +101,45 @@ This lab has an unprotected admin panel. It's located at an unpredictable locati
 
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/912c8cd0-e3ef-4c51-86fb-71cee94e1b7d)
 ![image](https://github.com/dante-falls/Web-Security/assets/29386604/e90f2831-c3f9-487f-9c40-6b6c5a2918a3)
+
+<h1>Lab 3: User Role Controlled By Request Parameter [WITHOUT BurpSuite]</h1>
+
+This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie. Solve the lab by accessing the admin panel and using it to delete the user carlos. You can log in to your own account using the following credentials: **wiener:peter** 
+
+<h2>The Vulnerable Website</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/98497fdc-c666-493a-9502-7f0f536bad5a)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/bdf3c47c-49df-4bb6-a441-926d76dfc77d)
+
+<h2>Navigating Towards The Admin Panel (/admin)</h2>
+
+**Here we try to access the /admin page on the website and we are denied access because we are not logged in as an admin**
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/810f940b-04e7-42b4-9407-7204b13e282a)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/15a50497-bcef-4d65-b446-2694fa61f345)
+
+
+<h2>Logging Into Our Trusted Account wiener:peter</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/555de79e-3c29-465a-922e-0dea8e7d2312)
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/9b6e69e4-4123-42a3-817f-015bac67d3a5)
+
+<h2>Analyzing The Admin Cookie</h2>
+
+**If you open the developer tools and look at the request that is made when you log into your account, you will notice a cookie that let's the web server determine if you are an admin or not. We can try to access the /admin page with this cookie as "true" and see if we can get access.**
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/18cd9509-d3a3-48db-a20c-232389193ecc)
+
+<h2>Adding The Admin Cookie And Accessing The /admin page</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/400c5f78-05a2-48ff-9ed9-39ff75bc2880)
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/9013bba7-d160-42a2-9286-b3ec58538ecb)
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e535ec80-6834-4261-9617-4731536f6ae8)
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/e210656c-1482-4d49-bcc0-310afea5e679)
+
+<h2>Deleting The User "Carlos" [LAB COMPLETE]</h2>
+
+![image](https://github.com/dante-falls/Web-Security/assets/29386604/3afbca62-2602-4375-8c2e-70e09e3402ff)
+
