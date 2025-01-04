@@ -1,0 +1,1 @@
+<h1>CORS - COMING SOON!</h1>
