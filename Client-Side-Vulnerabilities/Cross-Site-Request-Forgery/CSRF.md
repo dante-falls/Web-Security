@@ -5,14 +5,14 @@
 
 <h3>Gullible Gets His Data Changed</h3>
 
-A user named Gullible is shopping on a video game website called videogames-r-us[.]com. Gullible is super ready to buy the FINALLY released Grand Theft Auto 6, and all of a sudden someone from their gaming discord sends them this link gta-discounts[.]ec08b9g-abx920[.]dnshook[.]site. Gullible (the victim user) decides it is worth clicking on the suspicious link because he might get a discount on his upcoming Grand Theft Auto purchase. So Gullible clicks the link and is sent to the malicious website, where he is shown fake Grand Theft Auto discount codes. Analyze the image below to see the extremely real (but also fake) website hosting discount codes for Grand Theft Auto.
+A user named Gullible is shopping on a video game website called **videogames-r-us[.]com**. Gullible is super ready to buy the FINALLY released Grand Theft Auto 6, and all of a sudden someone from their gaming discord sends them this link **gta-discounts[.]ec08b9g-abx920[.]dnshook[.]site**. Gullible (the victim user) decides it is worth clicking on the suspicious link because he might get a discount on his upcoming Grand Theft Auto purchase. So Gullible clicks the link and is sent to the malicious website, where he is shown fake Grand Theft Auto discount codes. Analyze the image below to see the extremely real (but also fake) website hosting discount codes for Grand Theft Auto.
 
 ![image](https://github.com/user-attachments/assets/09722e1a-416e-4bbb-97dc-26a884389799)
 
 Gullible spends the next 5 minutes furiously clicking the big blue button praying that it works and he get's a discount code, but to everyone's suprise, it doesn't work. When Gullible gives up and goes back to his account on the video game website, all of his billing and payment information is changed. In an insanely insecure scenario, the attacker might even be able to make Gullible pay for multiple video games and send them to the attacker's personal shipping address. Or better yet, imagine this type of attack on your banking website. An attacker might make you send all your money, or bitcoins, to his account or wallet.
 
 The above scenario is an example of a web attack called Cross Site Request Forgery. If you are having troubles understanding the "Cross-Site" aspect of this, think about this. The attacker hosted some code on their malicious website that automatically
-changes Gullible's billing and payment information on videogames-r-us[.]com. In other words, the attacker made Gullible change his information on the video game website from a **completely different website**. That is why we call it "Cross Site". This should
+changes Gullible's billing and payment information on **videogames-r-us[.]com**. In other words, the attacker made Gullible change his information on the video game website from a **completely different website**. That is why we call it "Cross Site". This should
 also help you understand the "Request Forgery" aspect of this vulnerability. When Gullible used their browser to visit the attacker's website, the attacker made Gullible's browser make a request to the video game website. The attacker **forged a request**
 to the video game website from their own malicious website.
 
@@ -24,7 +24,7 @@ Let's identify why Cross Site Request Forgery happens by identifying some HTTP r
 
 
 
-This session cookie will be used for further session handling on the website, which allows the server to know which user is making a request. Take another look at session cookie that was set for the user 'wiener', it has a **"SameSite=None"** set as a cookie attribute. This **SameSite=None** attribute was set by the webserver, and tells the browser "This cookie can be utilized in cross-site requests". The SameSite can also be set to "Lax" and "Strict" in order to add some restrictions on the useage of the cookie by the browser, but for the purposes of this scenario, SameSite=None.
+This session cookie will be used for further session handling on the website, which allows the server to know which user is making a request. Take another look at session cookie that was set for the user 'wiener', it has a **"SameSite=None"** set as a cookie attribute. This **SameSite=None** attribute was set by the webserver, and tells the browser "This cookie can be utilized in cross-site requests". The SameSite can also be set to "Lax" and "Strict" in order to add some restrictions on the useage of the cookie by the browser on cross-site requests, but for the purposes of this scenario, SameSite=None.
 
 So what does SameSite=None have anything to do with Cross-Site Request Forgery? To explain that, we need some type of authenticated user action that could cause impact if exploited by an attacker. Let's choose the action for a user to update their email. If an attacker could make a user update their email to their own email address, the attacker could then use the forgot password functionality to change the victim user's password because the email will then be sent to the attacker. Analyze the HTTP Request to update a user's email address in the images below.
 
