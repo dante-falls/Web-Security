@@ -20,8 +20,7 @@ the checks below to find a CSRF vulnerability.
 **We can now determine that the authenticated action of "Update email" on the target website is vulnerable to CSRF**
 
 <h1>Proof Of Concept</h1>
-To make a user change their email address on 0a9c0040032ee23d80cffea8007e0099.web-security-academy[.]net, an attacker can host the following file on their malicious domain. When the
-victim user visits the attacker's domain, their email address will be changed.
+To make a user change their email address on 0a9c0040032ee23d80cffea8007e0099.web-security-academy[.]net, an attacker can host the following file on their malicious domain. When the victim user visits the attacker's domain, their 0a9c0040032ee23d80cffea8007e0099.web-security-academy[.]net email address will be changed.
 
 ```
 <!DOCTYPE html>
