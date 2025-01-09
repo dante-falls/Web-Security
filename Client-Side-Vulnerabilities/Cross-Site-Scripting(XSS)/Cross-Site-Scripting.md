@@ -1,5 +1,5 @@
 <h1>What The Heck Is Cross Site Scripting???</h1>
-Cross Site Scripting (XSS) is a web attack that runs arbitrary javascript in the context of the user's browsing session. So all cookies that are targeted with the XSS attack will be the cookie's in the victim's browser. Attackers using XSS against a victim essentially take momentary "control" of the victim's browser. Attackers can potentially use XSS to make a victim travel to a malicious domain, or change their email address, or send their sensitive cookies (or other data) to a malicious web server for collection.
+Cross Site Scripting (XSS) is a web attack that runs arbitrary javascript in the context of the user's browsing session. So all cookies that are targeted with the XSS attack will be the cookie's in the victim's browser. Attackers using XSS against a victim can make the victim's browser execute javascript code. For example, attackers can potentially use XSS to make a victim travel to a malicious domain, change their email address, or send their sensitive cookies (or other data) to a malicious web server for collection.
 
 <h2>Our First XSS Example</h2>
 
