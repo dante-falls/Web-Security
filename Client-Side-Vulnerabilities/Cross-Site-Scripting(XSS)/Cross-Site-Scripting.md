@@ -42,8 +42,14 @@ And this is what the attacker would see on their malicious server after the XSS 
 
 **Attacker's View**
 
-![image](https://github.com/user-attachments/assets/3ede17fb-ac14-4931-a19e-756d0c06e4f1)
+![image](https://github.com/user-attachments/assets/e01df473-a944-42b9-ac7e-f76bf15ce73d)
 
 Obviously, no sensitive data was sent over with this XSS payload. However, if other misconfigurations were present on the target website, an attacker could have made the victim user send their session cookie to the attacker's server. The attacker could then use the victim's session cookies to conduct a Session Hijacking on the victim user's account, which essentially means the attacker would be able to be logged in as the victim user.
 
+<h1>ChatGPT Generated Conclusion</h1>
 
+Cross-Site Scripting (XSS) remains one of the most prevalent and dangerous vulnerabilities in modern web applications due to its ability to execute arbitrary JavaScript in the victim's browser. As demonstrated, attackers can exploit poorly sanitized input to inject payloads that execute in the context of a user's session, potentially exposing sensitive data such as cookies, session tokens, or personal information.
+
+The technical impact of XSS goes beyond simple proof-of-concept alerts—it enables attackers to perform session hijacking, force unauthorized actions via CSRF, exfiltrate data, and even deploy more complex attacks such as browser-based keyloggers or malware delivery. This underscores the importance of robust input validation and output encoding practices, along with the implementation of Content Security Policy (CSP), HTTP-only cookies, and other defense-in-depth mechanisms.
+
+By understanding the anatomy of XSS attacks and their potential consequences, security professionals and developers can take a proactive approach to detect, mitigate, and prevent this vulnerability, ensuring a safer web for users.
