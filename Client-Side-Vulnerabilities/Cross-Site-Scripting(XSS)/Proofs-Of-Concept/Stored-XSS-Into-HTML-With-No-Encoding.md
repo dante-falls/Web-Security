@@ -33,7 +33,7 @@ An attacker can prove Stored XSS is possible on the blog comment functionality b
 <script>prompt("STORED-XSS-CONFIRMED")</script>
 ```
 
-
+When users go to read the comments on the blog where the attacker posted the malicious comment, the XSS payload will cause an alert to pop up on their screen.
 
 
 
