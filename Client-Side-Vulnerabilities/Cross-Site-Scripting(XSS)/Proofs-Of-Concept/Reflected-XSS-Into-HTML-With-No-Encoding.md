@@ -17,7 +17,7 @@ Reflected XSS has been identified in the search functionality. Let's analyze thi
 
 As you can see in the image above, the XSS payload is reflected in the search parameter in the URL.
 
-**https://0a4e006d04ebc3b3864ba86000a700ca.web-security-academy.net/?search=%3Cscript%3Eprompt%28%22Is+This+XSS%3F%3F%3F%22%29%3C%2Fscript%3E**
+**https://0a4e006d04ebc3b3864ba86000a700ca.web-security-academy[.]net/?search=%3Cscript%3Eprompt%28%22Is+This+XSS%3F%3F%3F%22%29%3C%2Fscript%3E**
 
 Because the user input that is injected into the **search** parameter is not sanitized in any way, the **search** parameter is vulnerable to XSS. 
 
