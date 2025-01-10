@@ -12,9 +12,10 @@ Analyze the images below.
 
 <mark>Let's test to see how <> and " symbols are encoded. Analyze the images below:</mark>
 
-![image](https://github.com/user-attachments/assets/063e898f-2fb7-4ef0-a947-1c35cf40bbb9)
-![image](https://github.com/user-attachments/assets/636864f5-04b7-4d3a-8d87-355bc333f8a1)
-![image](https://github.com/user-attachments/assets/fdbe307d-af1c-4f65-bac0-213a1640dda2)
+![image](https://github.com/user-attachments/assets/7745cfcb-82b7-4f85-ab26-bbaaca534f9a)
+![image](https://github.com/user-attachments/assets/81adee23-3d0c-4c5e-868e-67edf0ce6fb4)
+![image](https://github.com/user-attachments/assets/cb5ccdff-6bd2-4b60-a6b1-8ad71f79437d)
+
 
 As you can see, double quotation symbols and angle brackets are html encoded in the page source. This is likely a defense against XSS. However, it is weird that we are able to input non-URL values
 for our website name. We should only be able to put URL's that start with "http" or "https" as a website name.
@@ -27,8 +28,7 @@ As you can see in the above image, Stored XSS was achieved in the anchor tag's h
 
 <h1>Proof Of Concept</h1>
 
-In the above scenario, an attacker simply needs to inject the javascript: pseudo protocol with a javascript command as their website name when leaving a comment on the blog. This will achieve Stored XSS.
-See the below images for proof of concept.
+In the above scenario, an attacker simply needs to inject the javascript: pseudo protocol with a javascript command as their website name when leaving a comment on the blog. This should achieve Stored XSS after a user clicks on my name after I post my comment. See the below images for proof of concept.
 
 ![image](https://github.com/user-attachments/assets/bdce3077-5d80-4334-af09-4954573fbf0e)
 ![image](https://github.com/user-attachments/assets/2c318daf-fc91-44a8-96b7-769499a30938)
