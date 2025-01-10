@@ -36,6 +36,6 @@ Here is the specific line of HTML where the malicious javascript is injected.
 
 The XSS in the following URL proves XSS on the **search** parameter.
 
-https://0ac400b4046e86e98092fd0c00bf0097.web-security-academy.net/?search=%3Cscript%3Ealert%28%22XSS-CONFIRMED%22%29%3C%2Fscript%3E
+https://0ac400b4046e86e98092fd0c00bf0097.web-security-academy[.]net/?search=%3Cscript%3Ealert%28%22XSS-CONFIRMED%22%29%3C%2Fscript%3E
 
 ![image](https://github.com/user-attachments/assets/8371e057-a563-4911-9f74-a13d7eff984f)
