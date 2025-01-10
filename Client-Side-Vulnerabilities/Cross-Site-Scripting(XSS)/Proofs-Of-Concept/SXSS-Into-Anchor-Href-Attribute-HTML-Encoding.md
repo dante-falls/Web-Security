@@ -16,7 +16,7 @@ Let's test to see how <> and " symbols are encoded. Analyze the images below:
 ![image](https://github.com/user-attachments/assets/636864f5-04b7-4d3a-8d87-355bc333f8a1)
 ![image](https://github.com/user-attachments/assets/fdbe307d-af1c-4f65-bac0-213a1640dda2)
 
-As you can see, double quotation symbols and angle brackets are html encoded in the page source. This is likely a defense against XSS. However, it is weird that we are able to injection non-URL values
+As you can see, double quotation symbols and angle brackets are html encoded in the page source. This is likely a defense against XSS. However, it is weird that we are able to input non-URL values
 for our website name. We should only be able to put URL's that start with "http" or "https" as a website name.
 
 Because we can input any value as our personal website name, let's try to input the javascript:alert(document.cookie) as our website name. Analyze the images below:
