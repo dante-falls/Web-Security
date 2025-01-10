@@ -10,7 +10,7 @@ Analyze the images below.
 ![image](https://github.com/user-attachments/assets/fa56781f-b0ae-44f4-9e33-b48a3ac49a71)
 ![image](https://github.com/user-attachments/assets/7698eb43-79b0-4034-89dd-bf2cc8860de9)
 
-Let's test to see how <> and " symbols are encoded. Analyze the images below:
+<mark>Let's test to see how <> and " symbols are encoded. Analyze the images below:</mark>
 
 ![image](https://github.com/user-attachments/assets/063e898f-2fb7-4ef0-a947-1c35cf40bbb9)
 ![image](https://github.com/user-attachments/assets/636864f5-04b7-4d3a-8d87-355bc333f8a1)
