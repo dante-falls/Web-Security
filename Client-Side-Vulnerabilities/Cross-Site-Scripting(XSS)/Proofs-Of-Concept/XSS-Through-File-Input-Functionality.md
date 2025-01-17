@@ -2,7 +2,7 @@
 
 XSS can be achieved in an input element of type "file" when user's browse for files and click a file to upload. Analyze the scenario below.
 
-Scenario: When users comments on blogs, their input is not sanitized in any way. This means an attacker can inject a script that allows other users to choose a file. The JavaScript will execute when the victim user clicks 'browse', chooses a file and then clicks 'upload'.
+Scenario: When users comment on blogs, their input is not sanitized in any way. This means an attacker can inject a script that allows other users to choose a file. The JavaScript will execute when the victim user clicks 'browse', chooses a file and then clicks 'upload'.
 
 <h2>Attacker Injects Malicious File Input Functionality Into Another User's Blog via Comment Section</h2>
 
