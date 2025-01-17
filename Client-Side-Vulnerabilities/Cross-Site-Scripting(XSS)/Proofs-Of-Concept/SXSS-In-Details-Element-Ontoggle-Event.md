@@ -1,4 +1,4 @@
-<h1>Stored XSS In A HTML Details Element With An Ontoggle Event</h1>
+<h1>Stored XSS In An HTML Details Element Ontoggle Event</h1>
 
 XSS Is Possible within an html details element with an ontoggle= event. Analyze the example below where an attacker injects malicious html that causes a javascript alert on the victim's screen once the victim clicks the toggle (play) button.
 
