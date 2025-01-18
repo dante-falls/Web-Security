@@ -36,7 +36,7 @@ in their browser, and an alert message pops up on their screen. See the images b
 <h2>Less User Interaction</h2>
 
 This XSS attack can also be achieved with less user interaction by using the onclick or the onmouseover event handlers. With the onclick event handler, as soon as the user clicks the 
-file "Browse" button, the JavaScript will execute. With the onmouseover event handler, whenver the user hovers over the "Browse" button, the JavaScript will execute. Analyze the HTML below:
+file "Browse" button, the JavaScript will execute. With the onmouseover event handler, whenever the user hovers over the "Browse" button, the JavaScript will execute. Analyze the HTML below:
 
 <h3>onclick event handler</h3>
 
