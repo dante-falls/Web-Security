@@ -21,4 +21,7 @@ Level One is a Reflected XSS injected into an HTML context. There is no sanitiza
      - inject <img/src='a'/onerror=alert(1)> 
 ![image](https://github.com/user-attachments/assets/85d3a2ef-3637-4c78-a7c3-2219b6406431)
 
-4. Celebrate the successful JavaScript execution and move on to Level 2!
+4. Analyze the page source to see that our input is not sanitized, allowing for JavaScript execution in the injected image element.
+![image](https://github.com/user-attachments/assets/d746ae56-082f-4950-a7b4-40a865161743)
+
+5. Celebrate the successful JavaScript execution and move on to Level 2!
