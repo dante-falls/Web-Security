@@ -62,7 +62,9 @@ Image Tag = ```<img src='/static/level3/cloud' onerror='alert(1)'.jpg' />```
 
 See Successfull XSS in the image below:
 
-![image](https://github.com/user-attachments/assets/4ab431ba-221e-4a2e-a116-ab31e9abc220)
+![image](https://github.com/user-attachments/assets/02c2de04-672e-4745-bfe7-486964b395f9)
+
+
 
 
 
