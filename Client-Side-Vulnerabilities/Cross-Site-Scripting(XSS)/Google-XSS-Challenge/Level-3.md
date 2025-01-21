@@ -43,6 +43,26 @@ With the above payload, the URL will be: ```https://xss-game.appspot.com/level3/
 
 7. Awesome, we were able to achieve Javascript execution, confirming that XSS is possible because the window.location.hash object is collected and processed without any sanitization.
 
+<h3>A Better XSS Payload</h3>
+If you're smarter then me, then you realized that I did this the hard way. Obviously, when testing for XSS, we want the shortest payload possible. Because our input is dynamically injected into
+a HTML img tag, we can actually just inject an onerror event handler to achieve XSS (JavaScript execution). Remember, if we inject a #1 into the URL, we will see Image 1 on the page. See URL and dynamically generated image tag, below.
+
+URL = https://xss-game.appspot.com/level3/frame#1
+
+Image Tag = ```<img src='/static/level3/cloud1.jpg' />```
+
+So, instead of injecting a new image element, we can just inject this payload to achieve JavaScript Execution: ```' onerror='alert(1)'```
+
+The URL and Generated Image Tag will then be:
+
+
+URL = https://xss-game.appspot.com/level3/frame#' onerror='alert(1)'
+
+Image Tag = ```<img src='/static/level3/cloud' onerror='alert(1)'.jpg' />```
+
+See Successfull XSS in the image below:
+
+![image](https://github.com/user-attachments/assets/4ab431ba-221e-4a2e-a116-ab31e9abc220)
 
 
 
