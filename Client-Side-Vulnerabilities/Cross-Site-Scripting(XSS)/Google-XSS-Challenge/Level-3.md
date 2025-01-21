@@ -6,7 +6,7 @@
 
 <h2>Scenario</h2>
 
-Level Three is tough to "diagnose" the specific type of XSS. So let's analyze the context of the JavaScript execution before we say what type of XSS we have here.
+Level Three is an example of DOM-Based XSS. Let's analyze the context of the JavaScript execution.
 
 1. Because there are no forms or parameters to inject input into, we must inject our input directly into the URL. Notice that when you click Image 1, 2 or 3, the number of the image is in the URL after
    the hash (#). For example, if you click Image 1, this will be the URL: https://xss-game.appspot.com/level3/frame#1
