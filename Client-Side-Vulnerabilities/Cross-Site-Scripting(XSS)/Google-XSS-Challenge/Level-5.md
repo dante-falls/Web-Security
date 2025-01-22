@@ -4,8 +4,6 @@
 
 <h2>Scenario</h2>
 
-Level 5 is an example of Reflected XSS. The malicious user input is immediately reflected back to the user in the form of a clickable anchored element.
-
 1. On the front page, users can click the "signup" button which sends them to ```https://xss-game.appspot.com/level5/frame/signup?next=confirm``` See the next 2 images.
 
 ![image](https://github.com/user-attachments/assets/874c6d1d-bb04-4bb9-a94d-8cf4b1aa902d)
