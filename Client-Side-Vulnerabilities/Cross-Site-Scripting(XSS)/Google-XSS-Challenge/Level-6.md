@@ -22,7 +22,7 @@ The provided script is vulnerable to XSS because it dynamically appends <script>
 
 Payload = ```data:javascript,alert('XSS')```
 
-URL = https://xss-game.appspot.com/level6/frame#data:javascript,alert('XSS')
+URL = ```https://xss-game.appspot.com/level6/frame#data:javascript,alert('XSS')```
 
 Analyze the following image to verify that our payload successfully achieves JavaScript execution
 
