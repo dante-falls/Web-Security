@@ -24,7 +24,7 @@ It seems that our query is breaking the HTML on the page. Notice that part of my
 
 ![image](https://github.com/user-attachments/assets/cd3c3182-80a0-497a-824e-d6a87db74e36)
 
-<b>It looks like there is a script that dynamically creates an image tag with the user's search query. Let's check out the DOM to analyze img tag created in the DOM</b>
+<b>It looks like there is a script that unsafely uses our search query as a source with the document.write() sink to dynamically create an image tag. Let's check out the DOM to analyze the img tag created in the DOM</b>
 
 <h3>Document Object Model (DOM)</h3>
 
