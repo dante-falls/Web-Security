@@ -36,7 +36,9 @@ So that we can clearly see what is injected into the DOM with the document.write
 
 Now that we know that the DOM is creating an img tag with out user input, let's try to breakout of the img tag and create a new HTML element with an event handler that triggers an XSS alert(1).
 
-<mark>This payload will breakout of the dynamically created image tag and achieve XSS</mark> ```"><svg/onload=alert(1)>```
+<mark>This payload will breakout of the dynamically created image tag and achieve XSS</mark>
+
+```"><svg/onload=alert(1)>```
 
 Analyze the following images where we achieve XSS with the above svg payload injected into the search parameter in the URL.
 
