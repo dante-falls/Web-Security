@@ -28,4 +28,24 @@ It seems that our query is breaking the HTML on the page. Notice that part of my
 
 <h3>Document Object Model (DOM)</h3>
 
-![image](https://github.com/user-attachments/assets/3b0f6d56-d3b9-4c9b-b057-2578fe6587f9)
+So that we can clearly see what is injected into the DOM with the document.write() sink, I will search "TEST69420" in the search bar. Let's inspect the DOM after searching TEST69420 in the search bar.
+
+![image](https://github.com/user-attachments/assets/f460fe66-9589-487d-9fa2-a2639b06766e)
+
+<h3>Context Breakout To Achieve XSS</h3>
+
+Now that we know that the DOM is creating an img tag with out user input, let's try to breakout of the img tag and create a new HTML element with an event handler that triggers an XSS alert(1).
+
+<mark>This payload will breakout of the dynamically created image tag and achieve XSS</mark> ```"><svg/onload=alert(1)>```
+
+Analyze the following images where we achieve XSS with the above svg payload injected into the search parameter in the URL.
+
+![image](https://github.com/user-attachments/assets/a21e56d1-4555-4c55-8860-d1fb42d950dc)
+
+![image](https://github.com/user-attachments/assets/d8b4ba98-2f30-45b6-9e03-243845010bc7)
+
+<h4>DOM Analysis After Successful XSS</h4>
+
+![image](https://github.com/user-attachments/assets/c620635a-1ada-45ea-8775-df802bbcb20e)
+
+<b>Notice that after we inject our payload into the search parameter in the URL and the DOM loads the page, an entirely new <svg> element with our alert(1) payload is created.
