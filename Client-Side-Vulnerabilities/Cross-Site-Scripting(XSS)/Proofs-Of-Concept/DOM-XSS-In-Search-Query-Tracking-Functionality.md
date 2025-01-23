@@ -34,7 +34,7 @@ So that we can clearly see what is injected into the DOM with the document.write
 
 <h3>Context Breakout To Achieve XSS</h3>
 
-Now that we know that the DOM is creating an img tag with out user input, let's try to breakout of the img tag and create a new HTML element with an event handler that triggers an XSS alert(1).
+Now that we know that the DOM is creating an img tag with our user input, let's try to breakout of the img tag and create a new HTML element with an event handler that triggers an XSS alert(1).
 
 <mark>This payload will breakout of the dynamically created image tag and achieve XSS</mark>
 
