@@ -10,7 +10,7 @@ trigger in an admin portal.
 
 <h2>How To Use The Stored XSS Test Program</h2>
 
-1. Copy, Create and Start the python file in my Stored-XSS Repository labeled 'stored-xss-in-admin-portal.py'. Start the python file with python or python3. Reference the image below.
+1. Copy, Create and Start the python file in my Stored-XSS Repository labeled 'stored-xss-in-admin-portal.py'. The file is located at https://github.com/dante-falls/Web-Security/blob/main/Client-Side-Vulnerabilities/Cross-Site-Scripting(XSS)/Stored-XSS/stored-xss-in-admin-portal.py. Start the python file with python or python3. Reference the image below.
 
 ![start-stored-xss-test-suite](https://github.com/user-attachments/assets/cf4f1b94-4ac0-41e8-940c-a974941adea3)
 
