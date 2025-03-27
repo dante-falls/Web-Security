@@ -32,6 +32,8 @@ trigger in an admin portal.
    
 ![admin-portal-view-during-xss-execution](https://github.com/user-attachments/assets/e97e3e17-015f-4704-be0f-76f1d2fe32ae)
 
+6. You can delete all stored messages with the 'Delete All Messages' buttons.
+
 <h2>IMPACT - Why Is This Important?</h2>
 
 Stored XSS can be used to steal data and hijack user sessions. To do this, instead of using ```test';"/><img/src/onerror=alert(0)>``` to make a javascript alert box pop up on the user's screen, we can use a javascript
