@@ -5,14 +5,14 @@
 Stored-XSS can be a serious vulnerability, especially if your XSS Payloads trigger in an admin portal. Imagine your stored-blind xss payloads triggering in an admin portal, and you then recieve all of the
 admin's session cookies. You could Session Hijack the administrator and cause negative effects for the website. And this all happened because someone forgot to sanitize user input somewhere.
 
-Stored-XSS is fun to test for in Web Security, so I built a little python program that uses Flask to spin up a simple little application that let's you see what it looks like when your stored-xss payloads
+Stored-XSS is fun to test for in Web Security, so me and ChatGippity built a little python program that uses Flask to spin up a simple little application that let's you see what it looks like when your stored-xss payloads
 trigger in an admin portal.
 
 <h2>How To Use The Stored XSS Test Program</h2>
 
 1. Copy, Create and Start the python file in my Stored-XSS Repository labeled 'stored-xss-in-admin-portal.py'. The file is located at https://github.com/dante-falls/Web-Security/blob/main/Client-Side-Vulnerabilities/Cross-Site-Scripting(XSS)/Stored-XSS/stored-xss-in-admin-portal.py. Start the python file with python or python3. Reference the image below.
 
-![start-stored-xss-test-suite](https://github.com/user-attachments/assets/cf4f1b94-4ac0-41e8-940c-a974941adea3)
+![start-stored-xss-test-suite](https://github.com/user-attachments/assets/099233f7-7f21-415c-84b0-d42ddb3b57dd)
 
 
 2. After starting the Stored XSS In Admin Portal program, open your browser and visit http://127.0.0.1:5000. Reference the image below to see the program opened in my browser.
