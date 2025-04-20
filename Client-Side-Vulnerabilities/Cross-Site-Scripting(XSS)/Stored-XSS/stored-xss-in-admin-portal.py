@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect
+import html  # For escaping HTML
 
 app = Flask(__name__)
 messages = []  # Stores messages globally
@@ -9,7 +10,7 @@ def index():
     if request.method == 'POST':
         if 'message' in request.form:
             message = request.form['message']
-            messages.append(message)  # Store message
+            messages.append(message)  # Store message as-is (to preserve XSS payload)
         elif 'clear' in request.form:
             messages = []  # Clear all messages
     return f"""
@@ -30,7 +31,7 @@ def index():
         <hr>
         <h2>Stored Messages</h2>
         <ul>
-            {''.join(f'<li>{msg}</li>' for msg in messages)}
+            {''.join(f'<li>{html.escape(msg)}</li>' for msg in messages)}
         </ul>
         <form method="post">
             <button type="submit" name="clear">Delete All Messages</button>
@@ -56,7 +57,7 @@ def admin():
         <hr>
         <h2>Admin Portal</h2>
         <ul>
-            {''.join(f'<li>{msg}</li>' for msg in messages)}
+            {''.join(f'<li>{msg}</li>' for msg in messages)}  <!-- No escaping -->
         </ul>
         <form method="post">
             <button type="submit" name="clear">Delete All Messages</button>
