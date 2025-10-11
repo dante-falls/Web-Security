@@ -4,8 +4,6 @@ in some cases.
 
 <h2>What Do We Inject?</h2>
 
-We want to inject payloads that will 
-
 <img width="1138" height="422" alt="Detect-SQLi-Techniques" src="https://github.com/user-attachments/assets/ac99a451-02f3-4bf6-9c1f-8a7f9adbe6ea" />
 
 <h1>Example Of SQL Injection Detection</h1>
