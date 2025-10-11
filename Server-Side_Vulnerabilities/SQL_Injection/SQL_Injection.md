@@ -1,7 +1,7 @@
 <h1>What The Heck Is A SQL Injection?</h1>
 <mark>Structured Query Language Injection</mark>, AKA <mark>SQL Injection</mark> is a vulnerability where unsanitized user-input is injected into a SQL Query in order to obtain information about the Database. Web Servers often interact with SQL Databases (on the backend) to display requested data, and they utilize 
 user-input to determine what data is requested. For example, your website might have a filter functionality that allows users to filter their search for specific data. The website might then use that filter as an string input inside of a SQL Statement 
-to query the SQL Database. If the user input from the filter parameter is not sanitized, it can be injected into the SQL Statement and query the database for information the user is not authorized to know.
+to query the SQL Database. If the user input from the filter parameter is not sanitized, malicious input can be injected into the SQL Statement and query the database for information the user is not authorized to know.
 
 Analyze An Example Of Time-Based SQL Injection Below:
 
