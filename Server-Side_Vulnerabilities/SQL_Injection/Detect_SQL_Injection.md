@@ -38,9 +38,9 @@ To prove our SQL Injection, I will try to cause a 10 second delay in the servers
 
 <h2>Heres the URL when we inject our malicious payload to cause a 10 second delay in the response from the SQL Database</h2>
 
-Analyze the image and notice in the <mark>bottom right</mark> that the server response took 10 seconds to deliver to us. This proves that we are successfully interacting with the SQL Database via our injections into the category parameter.
-
 https://0ac700a4046e186080c4803500c300f3.web-security-academy.net/filter?category=Gifts';select+pg_sleep(10)--
+
+Analyze the image and notice in the <mark>bottom right</mark> that the server response took 10 seconds to deliver to us. This proves that we are successfully interacting with the SQL Database via our injections into the category parameter.
 
 
 <img width="1907" height="690" alt="sqli-detection-time-based-proof-of-concept" src="https://github.com/user-attachments/assets/4c216b94-8e8e-4f9a-b836-7499ef6e1c9a" />
