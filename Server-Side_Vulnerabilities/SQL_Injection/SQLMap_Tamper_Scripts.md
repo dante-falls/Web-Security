@@ -1,4 +1,6 @@
-SQLMAP Tamper Scripts
+<h1>SQLMAP Tamper Scripts</h1>
+
+<h3>SEE MY FAVORITE TAMPER SCRIPTS AT THE BOTTOM</h3>
 
 * 0eunion - Replaces instances of <int> UNION with <int>e0UNION
 * apostrophemask - Replaces apostrophe character (') with its UTF-8 full width counterpart (e.g. ' -> %EF%BC%87)
@@ -87,3 +89,6 @@ SEE IMAGE BELOW TO SEE WHAT THIS TAMPER LOOKS LIKE IN BURPSUITE
 
 
 <img width="1904" height="330" alt="tamper-script-timebased-sleep2lock-and-space2dash" src="https://github.com/user-attachments/assets/5d9b2930-7680-4268-8f2e-43f85250fb2a" />
+
+
+<h1>TO BE CONTINUED</h1>
