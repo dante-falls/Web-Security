@@ -1,4 +1,4 @@
-<h1>The Nmap Command Line Help Menu</h1>
+The Nmap Command Line Help Menu
 
 Usage: nmap [Scan Type(s)] [Options] {target specification}
 TARGET SPECIFICATION:
