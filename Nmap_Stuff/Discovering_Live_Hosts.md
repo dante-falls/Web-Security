@@ -105,3 +105,58 @@ nmap -sn 192.168.0.0/24
 
 7. -S IP_ADDRESS - spoof your IP address
 
+
+<h1>Working With NSE Scripts</h1>
+
+The Nmap Scripting Engine (NSE) is an incredibly powerful addition to Nmap, extending its functionality quite considerably. NSE Scripts are written in the Lua programming language, and can be used to do a variety of things: from scanning for vulnerabilities, to automating exploits for them. The NSE is particularly useful for reconnaisance, however, it is well worth bearing in mind how extensive the script library is. See some of the script categories, below.
+
+1. safe: Won't affect the target
+2. intrusive: Not safe: likely to affect the target
+3. vuln: Scan for vulnerabilities
+4. exploit: Attempt to exploit a vulnerability
+5. auth: Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+6. brute: Attempt to bruteforce credentials for running services
+7. discovery: Attempt to query running services for further information about the network (e.g. query an SNMP server).
+
+Example Useage:
+
+<mark>nmap -Pn -p 21 --script=ftp-anon --data-string 'defaultz6942031337ardvark' --min-rate 100 -vv 10.201.92.218</mark>
+
+The above Nmap NSE script will attempt FTP Anonymous login on the Target Host.
+
+<h3>How To Run Multiple NSE Scripts</h3>
+
+--script=smb-enum-users,smb-enum-shares
+
+<h3>Learn About An NSE Script</h3>
+
+nmap --script-help <script-name>
+
+<h3>Find NSE Scripts</h3>
+
+grep "ftp" /usr/share/nmap/scripts/script.db
+
+ls -l /usr/share/nmap/scripts/*ftp*
+
+<h2>Installing New Scripts</h2>
+
+We mentioned previously that the Nmap website contains a list of scripts, so, what happens if one of these is missing in the scripts directory locally? A standard sudo apt update && sudo apt install nmap should fix this; however, it's also possible to install the scripts manually by downloading the script from Nmap (sudo wget -O /usr/share/nmap/scripts/<script-name>.nse https://svn.nmap.org/nmap/scripts/<script-name>.nse). This must then be followed up with nmap --script-updatedb, which updates the script.db file to contain the newly downloaded script.
+
+It's worth noting that you would require the same "updatedb" command if you were to make your own NSE script and add it into Nmap -- a more than manageable task with some basic knowledge of Lua!
+
+<h1>Great Resources</h1>
+
+<h3>Firewall/IDS Evasion</h3>
+
+1. https://nmap.org/book/man-bypass-firewalls-ids.html
+2. https://medium.com/@appsecvenue/mastering-nmap-part-2-advanced-scans-firewall-evasion-for-bug-bounty-hunters-e005dcaf21a7
+
+<h3>NSE Scripts</h3>
+
+1. https://nmap.org/nsedoc/
+
+<h3>Places To Learn And Practice Nmap</h3>
+
+1. https://nmap.org/book/
+2. https://tryhackme.com/room/furthernmap
+
