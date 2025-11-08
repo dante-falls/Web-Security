@@ -107,7 +107,7 @@ Sometimes nmap can identify open|filtered ports while using Null scans (-sN). If
 <img width="824" height="367" alt="nmap-null-scan-scanflags-syncwrece-open-ports-no-response" src="https://github.com/user-attachments/assets/9ddd5bb2-e470-4805-94f7-39f4cbb95602" />
 
 
-2. nmap -sS --scanflags SYNCWRECE -Pn -p 21,53,80,135,3389 -vv TARGET_IP -- nmap will be able to identify open ports if you run a -sS (Stealth) scan
+2. nmap -sS --scanflags SYNCWRECE -Pn -p 21,53,80,135,3389 -vv TARGET_IP -- nmap will be able to identify open ports if you run a -sS (SYN) scan
 
 When running an 'nmap -sS --scanflags SYNCWRECE ' scan, nmap will be able to identify the open ports. See image below.
 
