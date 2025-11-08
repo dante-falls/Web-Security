@@ -84,10 +84,26 @@ OR
 
 nmap -sn 192.168.0.0/24
 
+<h1>How To Set Custom Flags with nmap --scanflags</h1>
+
+Truly advanced Nmap users need not limit themselves to the canned scanned types. The --scanflags option allows you to design your own scan by specifying arbitrary TCP flags.
+
+Example:
+
+nmap -sN --scanflags SYNCWRECE -Pn -p 21,53,80,135,3389 -vv TARGET_IP
+
+See image below to see one of the packets sent from this scan
+
+<img width="950" height="417" alt="nmap-null-scanflags-syncwrece-packet-sent-from-client" src="https://github.com/user-attachments/assets/1f0a4540-883d-4a1a-bc33-0e036957f3de" />
+
+The server responds with [SYN, ACK, ECE] for open ports in Wireshark. See image below.
+
+<img width="1898" height="248" alt="nmap-null-scanflags-syncwrece-responses-from-server" src="https://github.com/user-attachments/assets/36fdbb1d-1c40-48e9-9135-e384dd12b59e" />
+
 
 <h1>Add Custom Strings For Testing/Firewall Evasion Purposes</h1>
 
-1. <mark>Append a custom payload to sent packets</mark>: --data-string 'customString6942031337'
+1. <mark>Append a custom payload to sent packets</mark>: --data-string 'customString6942031337'</mark> -- this may cause a lot of random protocols to pop up, but it still works
 
 <h1>Firewall Evasion Techniques</h1>
 
