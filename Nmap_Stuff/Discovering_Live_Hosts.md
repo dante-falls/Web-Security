@@ -88,17 +88,30 @@ nmap -sn 192.168.0.0/24
 
 Truly advanced Nmap users need not limit themselves to the canned scanned types. The --scanflags option allows you to design your own scan by specifying arbitrary TCP flags.
 
-Example:
+Example(s):
 
-nmap -sN --scanflags SYNCWRECE -Pn -p 21,53,80,135,3389 -vv TARGET_IP
+1. nmap -sN --scanflags SYNCWRECE -Pn -p 21,53,80,135,3389 -vv TARGET_IP -- wireshark will show open ports if you run a -sN (Null) scan
 
-See image below to see one of the packets sent from this scan
+
+The packets are sent with [SYN, CWE, ECE] flags. See image below to see one of the packets sent from this scan
 
 <img width="950" height="417" alt="nmap-null-scanflags-syncwrece-packet-sent-from-client" src="https://github.com/user-attachments/assets/1f0a4540-883d-4a1a-bc33-0e036957f3de" />
 
 The server responds with [SYN, ACK, ECE] for open ports in Wireshark. See image below.
 
 <img width="1898" height="248" alt="nmap-null-scanflags-syncwrece-responses-from-server" src="https://github.com/user-attachments/assets/36fdbb1d-1c40-48e9-9135-e384dd12b59e" />
+
+
+Sometimes nmap can identify open|filtered ports while using Null scans (-sN). If nmap recieves no response when running a Null scan, it considers the port to be open|filtered. See image below.
+
+<img width="824" height="367" alt="nmap-null-scan-scanflags-syncwrece-open-ports-no-response" src="https://github.com/user-attachments/assets/9ddd5bb2-e470-4805-94f7-39f4cbb95602" />
+
+
+2. nmap -sS --scanflags SYNCWRECE -Pn -p 21,53,80,135,3389 -vv TARGET_IP -- nmap will be able to identify open ports if you run a -sS (Stealth) scan
+
+When running an 'nmap -sS --scanflags SYNCWRECE ' scan, nmap will be able to identify the open ports. See image below.
+
+<img width="857" height="681" alt="nmap-syn-scan-scanflags-syncwrece" src="https://github.com/user-attachments/assets/338528a3-9a17-46c1-a922-77cfb0460a8b" />
 
 
 <h1>Add Custom Strings For Testing/Firewall Evasion Purposes</h1>
