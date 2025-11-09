@@ -7,8 +7,8 @@ This makes it imperative that proper enumeration is carried out before any explo
 
 Before doing any active scans on the target network, we can start by doing a so-called “list scan”. A list scan doesn’t send traffic to any hosts but rather attempts a reverse DNS lookup to determine if a hostname can be found for the target.
 
-1. Singular Host: nmap -sL 45.33.32.156
-2. List Of Hosts: nmap -iL hosts.txt -sL 45.33.32.156
+1. Singular Host: nmap -sL 45.33.32.156 -vv
+2. List Of Hosts: nmap -iL hosts.txt -sL -vv
 
 See Image Below
 
@@ -31,7 +31,7 @@ See Image Below
 A UDP ping scan can be useful to circumvent firewalls between you and your target, as some firewalls will allow UDP traffic while blocking TCP. In this scan, Nmap sends a UDP packet to a high-numbered port that it expects to be closed. Depending on the response received, Nmap may be able to determine whether there is a host at the given address.
 
 1. Singular Host: nmap -sn -PU -Pn --reason -vv 45.33.32.156
-2. List Of Hosts: nmap -iL hosts.txt -sN -PU -Pn --reason -vv 45.33.32.156
+2. List Of Hosts: nmap -iL hosts.txt -sN -PU -Pn --reason -vv
 
 See Images Below
 
