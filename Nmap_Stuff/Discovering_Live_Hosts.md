@@ -41,6 +41,15 @@ See Images Below
 
 <img width="744" height="406" alt="nmap-UDP-ping-scan-example-2" src="https://github.com/user-attachments/assets/19e4800b-cfd8-4c2b-a73d-26ab0f6edfab" />
 
+<h1>ARP Ping Scans</h1>
+
+If you are scanning within your local network, an ARP ping is a speedy and reliable way to discover hosts. Note that Nmap can scan IP blocks rather than specific addresses, so if you would like to quickly scan a local network subnet, you can specify the block to scan.
+
+1. Scan List of Hosts: nmap -iL hosts.txt -sn -PR
+2. Scan IP Block: nmap -sn -PR 10.0.1.1/24
+
+<img width="743" height="304" alt="nmap-arp-scan-example" src="https://github.com/user-attachments/assets/7e886f6c-a65d-44d1-8720-d8eed2c58ed5" />
+
 
 <h1>Nmap Scan Types</h1>
 
@@ -122,6 +131,9 @@ nmap -sn 192.168.0.1-254
 OR
 
 nmap -sn 192.168.0.0/24
+
+<h1>More Scans Can Be Found At</h1>
+https://nmap.org/book/man-port-scanning-techniques.html
 
 <h1>How To Set Custom Flags with nmap --scanflags</h1>
 
@@ -218,6 +230,7 @@ It's worth noting that you would require the same "updatedb" command if you were
 
 1. https://nmap.org/book/man-bypass-firewalls-ids.html
 2. https://medium.com/@appsecvenue/mastering-nmap-part-2-advanced-scans-firewall-evasion-for-bug-bounty-hunters-e005dcaf21a7
+3. https://www.device42.com/blog/2023/03/29/nmap-host-discovery-the-ultimate-guide/
 
 <h3>NSE Scripts</h3>
 
@@ -228,4 +241,4 @@ It's worth noting that you would require the same "updatedb" command if you were
 1. https://nmap.org/book/
 2. https://tryhackme.com/room/furthernmap
 3. http://scanme.nmap.org/
-
+4. https://www.device42.com/blog/2023/03/29/nmap-host-discovery-the-ultimate-guide/
