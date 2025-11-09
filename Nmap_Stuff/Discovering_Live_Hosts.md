@@ -3,6 +3,45 @@
 When it comes to penetration testing, knowledge is power. The more knowledge you have about a target, the more options you have available. We want to essentially find as wide of an attack surface, as possible. 
 This makes it imperative that proper enumeration is carried out before any exploitation attempts are made. We can use nmap to discover live targets on a network.
 
+<h1>List Scans - Lists Live Hosts Via Reverse DNS</h1>
+
+Before doing any active scans on the target network, we can start by doing a so-called “list scan”. A list scan doesn’t send traffic to any hosts but rather attempts a reverse DNS lookup to determine if a hostname can be found for the target.
+
+1. Singular Host: nmap -sL 45.33.32.156
+2. List Of Hosts: nmap -iL hosts.txt -sL 45.33.32.156
+
+See Image Below
+
+<img width="903" height="178" alt="nmap-list-scan-example" src="https://github.com/user-attachments/assets/92df3ca4-5443-491a-bcb2-007c26badde8" />
+
+<h1>Ping Scans - Non-Port Scan To Identify Live Hosts</h1>
+
+When scanning for hosts, at the most basic level, we can use Nmap on a single host without doing any port scanning. We use the -sn scan option (for “no port scan”) to tell Nmap to ping the given IP address/block for hosts. This ping scan is similar to the traditional ping command, but by default an Nmap ping scan will also attempt to connect to any TCP service running on ports 80 and 443 with ACK and SYN packets respectively. These ports are customizable with the -PS and -PA options if you know there’s a particular service running on another port that you would like to send traffic to.Because of this additional traffic that Nmap sends, the default ping scan behaves slightly differently to the traditional ping command: Targets on the internet will likely not respond to ICMP pings and would appear down, so Nmap’s -sn configuration uses additional techniques to determine if a host is up.
+
+1. Singular Host: nmap -sn 45.33.32.156
+2. List Of Hosts: nmap -iL hosts.txt -sn
+3. Pure Ping Scan (dont run initial port connections on 80 and 443): nmap -PE -sn 45.33.32.156
+
+See Image Below
+
+<img width="893" height="309" alt="nmap-ping-scan-example" src="https://github.com/user-attachments/assets/4cf0e522-3169-4a0d-91c8-26ab2bfeac79" />
+
+<h1>UDP Ping Scan</h1>
+
+A UDP ping scan can be useful to circumvent firewalls between you and your target, as some firewalls will allow UDP traffic while blocking TCP. In this scan, Nmap sends a UDP packet to a high-numbered port that it expects to be closed. Depending on the response received, Nmap may be able to determine whether there is a host at the given address.
+
+1. Singular Host: nmap -sn -PU -Pn --reason -vv 45.33.32.156
+2. List Of Hosts: nmap -iL hosts.txt -sN -PU -Pn --reason -vv 45.33.32.156
+
+See Images Below
+
+<img width="893" height="309" alt="nmap-UDP-ping-scan-example" src="https://github.com/user-attachments/assets/1302d132-267d-4b16-9a48-156293cea3f3" />
+
+<h3>Example When A UDP Ping Scan Finds An Open Host</h3>
+
+<img width="744" height="406" alt="nmap-UDP-ping-scan-example-2" src="https://github.com/user-attachments/assets/19e4800b-cfd8-4c2b-a73d-26ab0f6edfab" />
+
+
 <h1>Nmap Scan Types</h1>
 
 <h2>-sT - TCP Connect Scan</h2>
