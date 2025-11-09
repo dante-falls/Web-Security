@@ -14,7 +14,7 @@ See Image Below
 
 <img width="903" height="178" alt="nmap-list-scan-example" src="https://github.com/user-attachments/assets/92df3ca4-5443-491a-bcb2-007c26badde8" />
 
-<h1>Ping Scans - Non-Port Scan To Identify Live Hosts</h1>
+<h1>Ping Scans To Identify Live Hosts - Uses Port Scan</h1>
 
 When scanning for hosts, at the most basic level, we can use Nmap on a single host without doing any port scanning. We use the -sn scan option (for “no port scan”) to tell Nmap to ping the given IP address/block for hosts. This ping scan is similar to the traditional ping command, but by default an Nmap ping scan will also attempt to connect to any TCP service running on ports 80 and 443 with ACK and SYN packets respectively. These ports are customizable with the -PS and -PA options if you know there’s a particular service running on another port that you would like to send traffic to.Because of this additional traffic that Nmap sends, the default ping scan behaves slightly differently to the traditional ping command: Targets on the internet will likely not respond to ICMP pings and would appear down, so Nmap’s -sn configuration uses additional techniques to determine if a host is up.
 
