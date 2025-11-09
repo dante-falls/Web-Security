@@ -2,7 +2,7 @@ description = [[
 Detects HTTP services running on any port, captures a screenshot using Cutycapt.
 
 Usage:
-  nmap --script http-service-screenshot <target>
+  nmap -sV --script http-service-screenshot <target>
 
 Requirements:
   - Cutycapt must be installed and in your system PATH
