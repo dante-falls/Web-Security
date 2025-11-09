@@ -20,6 +20,6 @@ This repository will eventually hold a list of useful Nmap NSE Scripts that I ha
 2. nmap --script-updatedb
 3. sudo updatedb
 
-<h1>Example Of NSE Script Running</h1>
+<h1>Example Of dirscan-plus.nse Script Running</h1>
 
 <img width="1898" height="809" alt="dirscan-plus-nse-script-running" src="https://github.com/user-attachments/assets/6a40cc61-aca3-4f3f-a73d-1fb034fde2eb" />
