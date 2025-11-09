@@ -132,6 +132,22 @@ OR
 
 nmap -sn 192.168.0.0/24
 
+<h1>-sA - TCP ACK Scan - Identify Ports That Are Filtered By Firewalls/IDS</h1>
+
+-sA (TCP ACK Scan)
+
+This scan is different than the others discussed so far in that it never determines open (or even open|filtered) ports. It is used to map out firewall rulesets, determining whether they are stateful or not and which ports are filtered.
+
+The ACK scan probe packet has only the ACK flag set (unless you use --scanflags). When scanning unfiltered systems, open and closed ports will both return a RST packet. Nmap then labels them as unfiltered, meaning that they are reachable by the ACK packet, but whether they are open or closed is undetermined. Ports that don't respond, or send certain ICMP error messages back (type 3, code 0, 1, 2, 3, 9, 10, or 13), are labeled filtered.
+
+See TCP ACK Scan Images Below
+
+<img width="905" height="440" alt="nmap-tcp-ack-scan-command-line-results" src="https://github.com/user-attachments/assets/4c22c0d2-2f54-43e2-b4ad-c26027478cdb" />
+
+
+<img width="1912" height="1091" alt="nmap-tcp-ack-scan-to-identify-filtered-ports" src="https://github.com/user-attachments/assets/1c70f7fa-ae85-46c7-b6e8-a7b2323a9fca" />
+
+
 <h1>More Scans Can Be Found At</h1>
 https://nmap.org/book/man-port-scanning-techniques.html
 
@@ -185,6 +201,7 @@ When running an 'nmap -sS --scanflags SYNCWRECE ' scan, nmap will be able to ide
 
 7. -S IP_ADDRESS - spoof your IP address
 
+8. Bypass Firewall To Discover Live Host With ACK Packets: nmap -PA80 -sn 192.168.1.0/24
 
 <h1>Working With NSE Scripts</h1>
 
