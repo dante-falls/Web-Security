@@ -1,11 +1,11 @@
 description = [[
-Detects HTTP services running on any port, captures a screenshot using Cutycapt.
+Detects HTTP services running on any port, captures a screenshot using Chromium.
 
 Usage:
   sudo nmap -sV --script http-service-screenshot <target>
 
 Requirements:
-  - Cutycapt must be installed and in your system PATH
+  - Chromium must be installed
   - Run with sufficient privileges to execute system() calls
 ]]
 
@@ -31,9 +31,10 @@ action = function(host, port)
   local proto = (port.tls or port.service == "https" or port.number == 443) and "https" or "http"
   local url = ("%s://%s:%d/"):format(proto, ip, port.number)
 
-  local filename = ("HTTP-%s-%d.jpg"):format(ip, port.number)
+  local prefix = (proto == "https") and "HTTPS" or "HTTP"
+  local filename = ("%s-%s-%d.jpg"):format(prefix, ip, port.number)
   local output_path = stdnse.tohex(ip .. port.number) .. ".jpg"  -- optional safety fallback
-  local cmd = ("cutycapt --url='%s' --out='%s' --min-width=1024 --min-height=768"):format(url, filename)
+  local cmd = ("chromium --headless --disable-gpu --ignore-certificate-errors --screenshot='%s' '%s'"):format(filename, url)
 
   stdnse.print_debug(1, "Executing: %s", cmd)
   os.execute(cmd)
