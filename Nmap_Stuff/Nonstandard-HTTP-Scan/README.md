@@ -46,7 +46,9 @@ See Example Images Below
 
 <img width="1891" height="498" alt="non-standard-http-port-scan-with-screenshot-nse" src="https://github.com/user-attachments/assets/27a37ac7-754c-49e9-b6b9-54bf49a2f716" />
 
-<img width="1910" height="436" alt="http-service-screenshot-nse-image-example" src="https://github.com/user-attachments/assets/ef40cb87-a709-4ec6-a0cc-b2544c3f68bf" />
+<img width="1541" height="526" alt="http-service-screenshot-nse-image-example" src="https://github.com/user-attachments/assets/9a79de94-1e33-4606-85fd-b9f3a5eb2f7a" />
+
+
 
 
 
