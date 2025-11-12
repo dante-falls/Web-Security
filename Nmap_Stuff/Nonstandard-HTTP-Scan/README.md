@@ -2,7 +2,7 @@
 
 Sometimes, HTTP/HTTPS services live on non-standard ports (any port other then the default ports of 80 and 443). We can use an Nmap service scan to identify these ports. See examples below.
 
-<h2>Scan 154 Non-Standard HTTP Ports To Discover HTTP Services</h2>
+<h2>Scan 91 Non-Standard HTTP Ports To Discover HTTP Services</h2>
 
 I looked through IANA and a few other resources to check for official Non-Standard HTTP Ports. Some of them are not scanned by Nmap by default, so I created a list that you can use to scan. Below is the link to the list:
 
