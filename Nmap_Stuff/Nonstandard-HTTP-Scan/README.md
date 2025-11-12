@@ -4,10 +4,7 @@ Sometimes, HTTP/HTTPS services live on non-standard ports (any port other then t
 
 <h2>Scan 154 Non-Standard HTTP Ports To Discover HTTP Services</h2>
 
-I looked through IANA and a few other resources to check for official Non-Standard HTTP Ports. Some of them are not scanned by Nmap by default, so I created a list that you can use to scan. One list has new line delimeters, and the
-other list has comma delimeters seperating each port. Below are the links to each list:
-
-https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nonstandard-HTTP-Scan/list-of-nonstandard-http-ports.txt
+I looked through IANA and a few other resources to check for official Non-Standard HTTP Ports. Some of them are not scanned by Nmap by default, so I created a list that you can use to scan. Below is the link to the list:
 
 https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nonstandard-HTTP-Scan/list-nonstandard-http-ports-comma-delimeter.txt
 
