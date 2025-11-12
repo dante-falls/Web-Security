@@ -17,7 +17,8 @@ https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nonstandard-HTT
 
 <mark>See Example Image Below</mark>
 
-<img width="1787" height="296" alt="non-standard-http-port-scan-syntax" src="https://github.com/user-attachments/assets/771a993a-5045-41bb-b63f-7c45f43afa70" />
+<img width="1898" height="356" alt="non-standard-http-port-scan-syntax" src="https://github.com/user-attachments/assets/dc72f233-7acc-4db3-aad7-92433f31b437" />
+
 
 
 
@@ -43,11 +44,12 @@ sudo nmap -sV --script http-service-screenshot -Pn -p $(cat /path/to/port-list.t
 
 See Example Images Below
 
-<img width="1902" height="590" alt="non-standard-http-port-scan-with-screenshot-nse" src="https://github.com/user-attachments/assets/23edf6a0-6940-43dd-b7ba-308ff5f82d89" />
+<img width="1891" height="498" alt="non-standard-http-port-scan-with-screenshot-nse" src="https://github.com/user-attachments/assets/27a37ac7-754c-49e9-b6b9-54bf49a2f716" />
 
-<img width="1909" height="760" alt="http-service-screenshot-nse-image-example" src="https://github.com/user-attachments/assets/aa59a770-09ba-4186-83b1-a571a6c24a20" />
+<img width="1910" height="436" alt="http-service-screenshot-nse-image-example" src="https://github.com/user-attachments/assets/ef40cb87-a709-4ec6-a0cc-b2544c3f68bf" />
 
-<img width="1899" height="769" alt="mr-robot-http-service-screenshot" src="https://github.com/user-attachments/assets/aac81711-a92b-44de-a433-ffa979573c48" />
+
+
 
 
 
