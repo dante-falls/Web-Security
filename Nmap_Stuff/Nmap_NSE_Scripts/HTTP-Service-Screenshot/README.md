@@ -1,9 +1,8 @@
 <h1>http-service-screenshot Nmap NSE Script</h1>
 
-<mark>Requires 'cutycapt'</mark>
+<mark>Requires 'chromium'</mark>
 
-When Nmap discovers an HTTP service during a service scan (-sV), the http-service-screenshot Nmap NSE Script will attempt to take a screenshot of the web page. The script uses 'cutycapt' to take a screenshot of the webpage. My Kali
-Linux had 'cutycapt' installed automatically.
+When Nmap discovers an HTTP service during a service scan (-sV), the http-service-screenshot Nmap NSE Script will attempt to take a screenshot of the web page. The script uses 'chromium' to take a screenshot of the webpage.
 
 <h2>Steps To Add Script To Kali Linux</h2>
 
