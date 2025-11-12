@@ -41,11 +41,17 @@ https://github.com/dante-falls/Web-Security/tree/main/Nmap_Stuff/Nmap_NSE_Script
 
 sudo nmap -sV --script http-service-screenshot -Pn -p $(cat /path/to/port-list.txt) -vv 10.201.106.66
 
-See Images Below
+See Example Images Below
 
 <img width="1902" height="590" alt="non-standard-http-port-scan-with-screenshot-nse" src="https://github.com/user-attachments/assets/23edf6a0-6940-43dd-b7ba-308ff5f82d89" />
 
 <img width="1909" height="760" alt="http-service-screenshot-nse-image-example" src="https://github.com/user-attachments/assets/aa59a770-09ba-4186-83b1-a571a6c24a20" />
+
+<img width="1899" height="769" alt="mr-robot-http-service-screenshot" src="https://github.com/user-attachments/assets/aac81711-a92b-44de-a433-ffa979573c48" />
+
+
+
+
 
 
 
