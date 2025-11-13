@@ -4,7 +4,7 @@
 
 1. Requires 'chromium'
 2. <mark>To Be Safe, chromium should be ran as a non-priviledged user on the system because this script uses '--no-sandbox' incase it needs to be ran with sudo. Make sure to change the <NON_PRIVILEDGED_USER> string on line 37 of https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nmap_NSE_Scripts/HTTP-Service-Screenshot/http-service-screenshot.nse to match your own unpriviledged system user</mark>
-3. <mark>ERRORS:</mark> This script causes dbus errors because chromium complains about an invalid dbus address. This is harmless and the screenshots are still taken
+3. <mark>ERRORS:</mark> This script causes dbus errors because chromium complains about an invalid dbus address. I will eventually fix this BUT for now this is harmless and the script still executes successfully.
 
 When Nmap discovers an HTTP service during a service scan (-sV), the http-service-screenshot Nmap NSE Script will attempt to take a screenshot of the web page. The script uses 'chromium' to take a screenshot of the webpage.
 
