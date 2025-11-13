@@ -34,7 +34,7 @@ action = function(host, port)
   local prefix = (proto == "https") and "HTTPS" or "HTTP"
   local filename = ("%s-%s-%d.jpg"):format(prefix, ip, port.number)
   local output_path = stdnse.tohex(ip .. port.number) .. ".jpg"  -- optional safety fallback
-  local cmd = ("chromium --headless --disable-gpu --ignore-certificate-errors --screenshot='%s' '%s'"):format(filename, url)
+  local cmd = ("runuser -u <NON_PRIVILEDGED_USER> -- chromium --headless --disable-gpu --ignore-certificate-errors --no-sandbox --screenshot='%s' '%s'"):format(filename, url)
 
   stdnse.print_debug(1, "Executing: %s", cmd)
   os.execute(cmd)
