@@ -2,7 +2,7 @@
 
 <h3>IMPORTANT</h3>
 
-1. Requires 'chromium'
+1. Requires 'chromium' - I use chromium because it can bypass certificate errors and still open the web page.
 2. <mark>To Be Safe, chromium should be ran as a non-priviledged user on the system because this script uses '--no-sandbox' incase it needs to be ran with sudo. Make sure to change the <NON_PRIVILEDGED_USER> string on line 37 of https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nmap_NSE_Scripts/HTTP-Service-Screenshot/http-service-screenshot.nse to match your own unpriviledged system user</mark>
 3. <mark>ERRORS:</mark> This script causes dbus errors because chromium complains about an invalid dbus address. I will eventually fix this BUT for now this is harmless and the script still executes successfully.
 
