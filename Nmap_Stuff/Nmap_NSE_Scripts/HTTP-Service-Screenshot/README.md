@@ -13,8 +13,9 @@ When Nmap discovers an HTTP service during a service scan (-sV), the http-servic
 link to http-service-screenshot.nse: https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nmap_NSE_Scripts/HTTP-Service-Screenshot/http-service-screenshot.nse
 
 1. sudo nano /usr/share/nmap/scripts/http-service-screenshot.nse
-2. nmap --script-updatedb
-3. sudo updatedb
+2. Make sure you edit the <NON_PRIVILEDGED_USER> string on line 37 of the http-service-screenshot.nse so that the script is ran as a non-priviledged user, you shouldn't let the chromium run as root with --no-sandbox. It ain't safe. However, whatever user you choose should still be able to write files in the current directory so that chromium can create an image of the web page.
+3. nmap --script-updatedb
+4. sudo updatedb
 
 <h2>How To Use http-service-screenshot.nse</h2>
 
