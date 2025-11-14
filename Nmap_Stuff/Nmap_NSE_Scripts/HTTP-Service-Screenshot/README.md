@@ -1,21 +1,18 @@
 <h1>http-service-screenshot Nmap NSE Script</h1>
 
-When Nmap discovers an HTTP service during a service scan (-sV), http-service-screenshot.nse will attempt to take a screenshot of the web page. The script uses 'chromium' to take a screenshot of the webpage.
+When Nmap discovers an HTTP service during a service scan (-sV), http-service-screenshot.nse will attempt to take a screenshot of the web page. The script uses 'cutycapt' to take a screenshot of the webpage.
 
 <h3>IMPORTANT</h3>
 
-1. Requires 'chromium' - I use chromium because it can bypass certificate errors and still open the web page.
-2. <mark>To Be Safe, chromium should be ran as a non-priviledged user on the system because this script uses '--no-sandbox' incase it needs to be ran with sudo. Make sure to change the <NON_PRIVILEDGED_USER> string on line 37 of https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nmap_NSE_Scripts/HTTP-Service-Screenshot/http-service-screenshot.nse to match your own unpriviledged system user</mark>
-3. <mark>ERRORS:</mark> This script causes dbus errors because chromium complains about an invalid dbus address. I will eventually fix this BUT for now this is harmless and the script still executes successfully.
+1. Requires 'cutycapt'
 
 <h2>Steps To Add Script To Kali Linux</h2>
 
 link to http-service-screenshot.nse: https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nmap_NSE_Scripts/HTTP-Service-Screenshot/http-service-screenshot.nse
 
 1. sudo nano /usr/share/nmap/scripts/http-service-screenshot.nse
-2. Make sure you edit the <NON_PRIVILEDGED_USER> string on line 37 of the http-service-screenshot.nse so that the script is ran as a non-priviledged user, you shouldn't let the chromium run as root with --no-sandbox. It ain't safe. However, whatever user you choose should still be able to write files in the current directory so that chromium can create an image of the web page.
-3. nmap --script-updatedb
-4. sudo updatedb
+2. nmap --script-updatedb
+3. sudo updatedb
 
 <h2>How To Use http-service-screenshot.nse</h2>
 
