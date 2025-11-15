@@ -19,7 +19,7 @@ You can add flags to the cutycapt command on line 51 of the http-service-screens
 1. Minimum Width Of Image: --min-width=1366
 2. Minimum Height Of Image: --min-height=768
 3. Delay (milliseconds) Before Screenshot Is Taken: --delay=3000
-4. Make The Background White: --user-style-string='html,body{background: white !important;}
+4. Make The Background White: --user-style-string='html,body{background: white !important;}'
 5. Ignore SSL/TLS Certificate Issues
 
 
