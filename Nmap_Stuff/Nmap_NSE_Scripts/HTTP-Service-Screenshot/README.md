@@ -27,25 +27,25 @@ link to http-service-screenshot.nse: https://github.com/dante-falls/Web-Security
 1. <mark>Service Scan Top 1000 Ports</mark>: sudo nmap -sV --script http-service-screenshot -Pn TARGET_IP
 2. <mark>Service Scan Specific Ports</mark>: sudo nmap -sV --script http-service-screenshot -p 22,80,443,8081,8082 -Pn TARGET_IP
 
-<img width="1390" height="747" alt="http-service-screenshot-commandline-syntax" src="https://github.com/user-attachments/assets/775f5a82-fb4e-4cec-a4df-a924046323e0" />
-
+<img width="1223" height="703" alt="http-service-screenshot-commandline-syntax" src="https://github.com/user-attachments/assets/8dc90345-355c-4677-a5b0-766154d773d2" />
 
 <h2>Verify Files Were Created with 'ls'</h2>
 
-<img width="1479" height="110" alt="http-service-screenshot-view-script-images-commandline" src="https://github.com/user-attachments/assets/24c8563f-1abd-4220-9cb4-262bfeac3ca4" />
+<img width="1334" height="99" alt="http-service-screenshot-view-script-images-commandline" src="https://github.com/user-attachments/assets/0bbb8426-b046-482c-81f2-a991cc5e4050" />
+
 
 
 <h2>View The http-services.html File That Organizes All Data Into A Readable Format</h2>
 
 <mark>These are images of the HTML file so they are truncated in some spots. The HTML file will look normal when you open on your own system.</mark>
 
-<img width="1417" height="807" alt="http-services-html-file-1" src="https://github.com/user-attachments/assets/23045a8d-3caf-458f-bf41-53afe7b3253e" />
-<img width="981" height="746" alt="http-services-html-file-2" src="https://github.com/user-attachments/assets/bf2b75da-b3be-4c2a-bcae-347bf2bc76c0" />
-
+<img width="1212" height="810" alt="http-services-html-file-1" src="https://github.com/user-attachments/assets/d79b8628-0074-42f3-8c92-17f39e7126fb" />
+<img width="1316" height="802" alt="http-services-html-file-2" src="https://github.com/user-attachments/assets/28e6cd5d-7005-4303-b8de-ee5e1d12accb" />
 
 
 <h2>View The http-services-list.txt File That Organizes All URLs Into One File</h2>
 
-<img width="448" height="148" alt="http-services-list-txt-file" src="https://github.com/user-attachments/assets/7559df6d-769d-47db-aed2-00a3379c112c" />
+<img width="505" height="153" alt="http-services-list-txt-file" src="https://github.com/user-attachments/assets/b5198b65-88af-4617-b29b-8ad222a917bf" />
+
 
 
