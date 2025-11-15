@@ -20,7 +20,7 @@ You can add flags to the cutycapt command on line 51 of the http-service-screens
 2. Minimum Height Of Image: --min-height=768
 3. Delay (milliseconds) Before Screenshot Is Taken: --delay=3000
 4. Make The Background White: --user-style-string='html,body{background: white !important;}'
-5. Ignore SSL/TLS Certificate Issues
+5. Ignore SSL/TLS Certificate Issues (THIS IS RAN BY DEFAULT): --insecure
 
 
 <h2>Steps To Add Script To Kali Linux</h2>
