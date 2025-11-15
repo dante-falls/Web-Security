@@ -4,13 +4,13 @@
 
 1. Attempt to take a screenshot of the webpage with cutycapt.
 2. Run whatweb on the web service to get basic server information
-3. Organizes all information to an HTML file called 'http-services.html' for easier viewing of data
+3. Organizes all information into an HTML file called 'http-services.html' for easier viewing of data
 4. Write a txt file called 'http-services-list.txt' that lists all the URLs found
 
 <h3>Requirements</h3>
 
 1. 'cutycapt' for screenshots
-2. 'whatweb' for web service identification
+2. 'whatweb' for web service information
 
 <h2>Steps To Add Script To Kali Linux</h2>
 
