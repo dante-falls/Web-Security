@@ -1,6 +1,6 @@
 <h1>http-service-screenshot Nmap NSE Script</h1>
 
-<mark>When Nmap discovers an HTTP service during a service scan (-sV), http-service-screenshot.nse will:</mark>
+<mark>When Nmap discovers an HTTP or HTTPS service during a service scan (-sV), http-service-screenshot.nse will:</mark>
 
 1. Attempt to take a screenshot of the webpage with cutycapt.
 2. Run whatweb on the web service to get basic server information
