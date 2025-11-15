@@ -7,10 +7,20 @@
 3. Organizes all information into an HTML file called 'http-services.html' for easier viewing of data
 4. Write a txt file called 'http-services-list.txt' that lists all the URLs found
 
-<h3>Requirements</h3>
+<h2>Requirements</h2>
 
 1. 'cutycapt' for screenshots
 2. 'whatweb' for web service information
+
+<h2>Configure How cutycapt Takes The Screenshot</h2>
+
+You can add flags to the cutycapt command on line 51 of the http-service-screenshot.nse script in order to change how cutycapt takes a screenshot of the webpage. See all flags by running 'cutycapt --help' on the command line. You can add the following functionality, and more.
+
+1. Minimum Width Of Image: --min-width=1366
+2. Minimum Height Of Image: --min-height=768
+3. Delay (milliseconds) Before Screenshot Is Taken: --delay=3000
+4. Make The Background White: --user-style='html,body{background:white !important;color:black !important;}'
+
 
 <h2>Steps To Add Script To Kali Linux</h2>
 
