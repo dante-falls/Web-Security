@@ -37,6 +37,8 @@ link to http-service-screenshot.nse: https://github.com/dante-falls/Web-Security
 
 <h2>View The http-services.html File That Organizes All Data Into A Readable Format</h2>
 
+<mark>These are images of the HTML file so they are truncated in some spots. The HTML file will look normal when you open on your own system.</mark>
+
 <img width="1417" height="807" alt="http-services-html-file-1" src="https://github.com/user-attachments/assets/23045a8d-3caf-458f-bf41-53afe7b3253e" />
 <img width="981" height="746" alt="http-services-html-file-2" src="https://github.com/user-attachments/assets/bf2b75da-b3be-4c2a-bcae-347bf2bc76c0" />
 
