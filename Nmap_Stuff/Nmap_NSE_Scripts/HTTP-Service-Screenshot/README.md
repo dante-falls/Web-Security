@@ -28,7 +28,7 @@ You can add flags to the cutycapt command on line 51 of the http-service-screens
 link to http-service-screenshot.nse: https://github.com/dante-falls/Web-Security/blob/main/Nmap_Stuff/Nmap_NSE_Scripts/HTTP-Service-Screenshot/http-service-screenshot.nse
 
 1. sudo nano /usr/share/nmap/scripts/http-service-screenshot.nse
-2. nmap --script-updatedb
+2. sudo nmap --script-updatedb
 3. sudo updatedb
 
 <h1>How To Use http-service-screenshot.nse</h1>
