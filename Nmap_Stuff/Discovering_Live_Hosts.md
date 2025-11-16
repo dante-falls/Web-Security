@@ -201,7 +201,7 @@ When running an 'nmap -sS --scanflags SYNCWRECE ' scan, nmap will be able to ide
 
 7. -S IP_ADDRESS - spoof your IP address
 
-8. Bypass Firewall To Discover Live Host With ACK Packets: nmap -PA80 -sn 192.168.1.0/24
+8. Bypass Firewall To Discover Live Host With ACK Packets (Only scans Port 80 with ACK Packet, expects RST -- Does not resolve DNS): nmap -PA80 -sn -n 192.168.1.0/24
 
 <h1>Working With NSE Scripts</h1>
 
