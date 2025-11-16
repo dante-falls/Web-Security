@@ -2,7 +2,7 @@
 
 <h2>IMPORTANT Fixes</h2>
 
-1. <mark>Sanitzation Of whatweb output into http-services.html File:</mark> versions of http-service-screenshot.nse downloaded before 11/16/2025 at 11:05 AM PST were POTENTIALLY vulnerable to XSS because of the unsanitized output from whatweb directly into the http-services.html file. This has been fixed and everything is working as expected.
+1. <mark>Sanitization Of whatweb output into http-services.html File:</mark> versions of http-service-screenshot.nse downloaded before 11/16/2025 at 11:05 AM PST were POTENTIALLY vulnerable to XSS because of the unsanitized output from whatweb directly into the http-services.html file. This has been fixed and everything is working as expected.
 
 <h2>Description</h2>
 
