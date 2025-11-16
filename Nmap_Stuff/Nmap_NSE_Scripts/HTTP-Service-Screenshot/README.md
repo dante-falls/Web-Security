@@ -20,7 +20,7 @@
 
 <h2>Configure How cutycapt Takes The Screenshot</h2>
 
-You can add flags to the cutycapt command on line 51 of the http-service-screenshot.nse script in order to change how cutycapt takes a screenshot of the webpage. See all flags by running 'cutycapt --help' on the command line. You can add the following functionality, and more.
+You can add flags to the cutycapt command on line 63 of the http-service-screenshot.nse script in order to change how cutycapt takes a screenshot of the webpage. See all flags by running 'cutycapt --help' on the command line. You can add the following functionality, and more.
 
 1. Minimum Width Of Image: --min-width=1366
 2. Minimum Height Of Image: --min-height=768
