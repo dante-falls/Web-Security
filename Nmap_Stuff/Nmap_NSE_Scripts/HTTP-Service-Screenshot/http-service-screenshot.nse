@@ -99,7 +99,7 @@ postrule = function()
     for i, entry in ipairs(all) do
         list:write(entry.url)
         if i < #all then
-            list:write("\n")  -- no trailing newline at end
+            list:write("\n")
         end
     end
     list:close()
