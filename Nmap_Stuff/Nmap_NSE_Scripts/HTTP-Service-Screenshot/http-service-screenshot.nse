@@ -20,6 +20,18 @@ portrule = function(host, port)
         or (port.version and port.version.product and port.version.product:match("http"))
 end
 
+-- NEW: safe HTML-escaping to prevent XSS
+local function escape_html(str)
+    if not str then return "" end
+    return (str
+        :gsub("&", "&amp;")
+        :gsub("<", "&lt;")
+        :gsub(">", "&gt;")
+        :gsub('"', "&quot;")
+        :gsub("'", "&#39;")
+    )
+end
+
 -- storage container used by postrule
 nmap.registry.http_services = nmap.registry.http_services or {}
 
@@ -93,7 +105,7 @@ postrule = function()
     end
 
     --------------------------------------------------------------------
-    -- Write http-services-list.txt (NO extra blank line now)
+    -- Write http-services-list.txt
     --------------------------------------------------------------------
     local list = io.open("http-services-list.txt", "w")
     for i, entry in ipairs(all) do
@@ -123,7 +135,9 @@ postrule = function()
 
         for _, e in ipairs(entries) do
             html:write(("<h2>%s</h2>\n"):format(e.url))
-            html:write(("%s<br>\n"):format(e.whatweb:gsub("\n", "<br>")))
+
+            html:write(escape_html(e.whatweb):gsub("\n", "<br>") .. "<br>\n")
+
             html:write(("<img src=\"%s\">\n<br><br>\n"):format(e.screenshot))
         end
 
