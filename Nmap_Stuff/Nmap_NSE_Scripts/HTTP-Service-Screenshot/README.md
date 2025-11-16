@@ -1,5 +1,9 @@
 <h1>http-service-screenshot Nmap NSE Script</h1>
 
+<mark>IMPORTANT: versions of http-service-screenshot.nse downloaded before 11/16/2025 at 11:05 PST were POTENTIALLY vulnerable to XSS because of the unsanitized output from whatweb directly into the http-services.html file. This has been fixed and everything is working as expected.</mark>
+
+<h2>Description</h2>
+
 <mark>When Nmap discovers an HTTP or HTTPS service during a service scan (-sV), http-service-screenshot.nse will:</mark>
 
 1. Attempt to take a screenshot of the webpage with cutycapt.
