@@ -6,7 +6,7 @@
 
 <h2>Current Issues</h2>
 
-1. <mark>HTTPS Services Missidentified On ports other then 443:</mark> As of 11/17/2025, the current script does not correctly identify HTTPS services on ports other then 443, and will write the URL as 'http://IP:PORT' instead of 'https://IP:PORT' and will then write the incorrect data into http-services.html and http-services-list.txt. The current <mark>solution</mark> is to look through http-services-list.txt and analyze ports other then 443 to see if they are actually HTTPS. This missidentification will be evident in the html file if you look at the screenshots.
+1. <mark>HTTPS Services Missidentified On ports other then 443:</mark> As of 11/17/2025 12:20 PST, the current script does not correctly identify HTTPS services on ports other then 443, and will write the URL as 'http://IP:PORT' instead of 'https://IP:PORT' and will then write the incorrect data into http-services.html and http-services-list.txt. The current <mark>solution</mark> is to look through http-services-list.txt and analyze ports other then 443 to see if they are actually HTTPS. This missidentification will be evident in the html file if you look at the screenshots.
 
 <h2>Description</h2>
 
