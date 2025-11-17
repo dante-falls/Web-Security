@@ -4,6 +4,10 @@
 
 1. <mark>Sanitization of whatweb output into http-services.html File:</mark> versions of http-service-screenshot.nse downloaded before 11/16/2025 at 11:05 AM PST were POTENTIALLY vulnerable to XSS because of the unsanitized output from whatweb written directly into the http-services.html file. This has been fixed and everything is working as expected.
 
+<h2>Current Issues</h2>
+
+1. <mark>HTTPS Services Missidentified On ports other then 443:</mark> As of 11/17/2025, the current script does not correctly identify HTTPS services on ports other then 443, and will write the URL as 'http://IP:PORT' instead of 'https://IP:PORT' and will then write the incorrect data into http-services.html and http-services-list.txt. The whatweb output will also be incorrect because whatweb tests the incorrect URL. The current <mark>solution</mark> is to look through http-services-list.txt and analyze ports other then 443 to see if they are actually HTTPS. This missidentification will be evident in the html file if you look at the screenshots.
+
 <h2>Description</h2>
 
 <mark>When Nmap discovers an HTTP or HTTPS service during a service scan (-sV), http-service-screenshot.nse will:</mark>
