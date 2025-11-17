@@ -33,10 +33,6 @@ A UDP ping scan can be useful to circumvent firewalls between you and your targe
 1. Singular Host: nmap -sn -PU -Pn --reason -vv 45.33.32.156
 2. List Of Hosts: nmap -iL hosts.txt -sN -PU -Pn --reason -vv
 
-See Images Below
-
-<img width="893" height="309" alt="nmap-UDP-ping-scan-example" src="https://github.com/user-attachments/assets/1302d132-267d-4b16-9a48-156293cea3f3" />
-
 <h3>Example When A UDP Ping Scan Finds An Open Host</h3>
 
 <img width="744" height="406" alt="nmap-UDP-ping-scan-example-2" src="https://github.com/user-attachments/assets/19e4800b-cfd8-4c2b-a73d-26ab0f6edfab" />
