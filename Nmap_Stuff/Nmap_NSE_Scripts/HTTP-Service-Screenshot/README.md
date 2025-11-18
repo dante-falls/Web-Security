@@ -1,6 +1,7 @@
 <h1>http-service-screenshot Nmap NSE Script</h1>
 
-<img width="1873" height="638" alt="http-service-screenshot-intro-picture" src="https://github.com/user-attachments/assets/3bc6ce1b-47fe-49e4-91a4-387f1bb2551b" />
+<img width="1898" height="814" alt="http-service-screenshot-intro-picture" src="https://github.com/user-attachments/assets/81586272-73a2-4d23-9257-fe8c20a96ea8" />
+
 
 <h2>Description</h2>
 
