@@ -3,10 +3,7 @@
 <h2>IMPORTANT Fixes</h2>
 
 1. <mark>Sanitization of whatweb output into http-services.html File:</mark> versions of http-service-screenshot.nse downloaded before 11/16/2025 at 11:05 AM PST were POTENTIALLY vulnerable to XSS because of the unsanitized output from whatweb written directly into the http-services.html file. This has been fixed and everything is working as expected.
-
-<h2>Current Issues</h2>
-
-1. <mark>HTTPS Services Missidentified On ports other then 443:</mark> As of 11/17/2025 12:20 PST, the current script does not correctly identify HTTPS services on ports other then 443, and will write the URL as 'http://IP:PORT' instead of 'https://IP:PORT' and will then write the incorrect data into http-services.html and http-services-list.txt. The current <mark>solution</mark> is to look through the nmap results and analyze ports other then 443 to see if they are actually HTTPS. This missidentification will be evident in the html file if you look at the screenshots. -- WORKING ON A FIX
+2. <mark>HTTPS Services Identification Issue Fixed:</mark> As of 11/17/2025 5:43 PM PST, the http-service-screenshot.nse script can now correctly identify HTTPS services that are on ports other then 443. These HTTPS services are now identified with an SSL Probe (check line 61 of the http-service-screenshot.nse script).
 
 <h2>Description</h2>
 
@@ -24,7 +21,7 @@
 
 <h2>Configure How cutycapt Takes The Screenshot</h2>
 
-You can add flags to the cutycapt command on line 63 of the http-service-screenshot.nse script in order to change how cutycapt takes a screenshot of the webpage. See all flags by running 'cutycapt --help' on the command line. You can add the following functionality, and more.
+You can add flags to the cutycapt command on line 79 of the http-service-screenshot.nse script in order to change how cutycapt takes a screenshot of the webpage. See all flags by running 'cutycapt --help' on the command line. You can add the following functionality, and more.
 
 1. Minimum Width Of Image: --min-width=1366
 2. Minimum Height Of Image: --min-height=768
