@@ -1,9 +1,6 @@
 <h1>http-service-screenshot Nmap NSE Script</h1>
 
-<h2>IMPORTANT Fixes</h2>
-
-1. <mark>Sanitization of whatweb output into http-services.html File:</mark> versions of http-service-screenshot.nse downloaded before 11/16/2025 at 11:05 AM PST were POTENTIALLY vulnerable to XSS because of the unsanitized output from whatweb written directly into the http-services.html file. This has been fixed and everything is working as expected.
-2. <mark>HTTPS Services Identification Issue Fixed:</mark> As of 11/17/2025 5:43 PM PST, the http-service-screenshot.nse script can now correctly identify HTTPS services that are on ports other then 443. These HTTPS services are now identified with an SSL Probe (check line 61 of the http-service-screenshot.nse script).
+<img width="1873" height="638" alt="http-service-screenshot-intro-picture" src="https://github.com/user-attachments/assets/3bc6ce1b-47fe-49e4-91a4-387f1bb2551b" />
 
 <h2>Description</h2>
 
@@ -13,6 +10,11 @@
 2. Run whatweb on the web service to get basic server information
 3. Organizes all information into an HTML file called 'http-services.html' for easier viewing of data
 4. Write a txt file called 'http-services-list.txt' that lists all the URLs found
+
+<h2>IMPORTANT Fixes</h2>
+
+1. <mark>Sanitization of whatweb output into http-services.html File:</mark> versions of http-service-screenshot.nse downloaded before 11/16/2025 at 11:05 AM PST were POTENTIALLY vulnerable to XSS because of the unsanitized output from whatweb written directly into the http-services.html file. This has been fixed and everything is working as expected.
+2. <mark>HTTPS Services Identification Issue Fixed:</mark> As of 11/17/2025 5:43 PM PST, the http-service-screenshot.nse script can now correctly identify HTTPS services that are on ports other then 443. These HTTPS services are now identified with an SSL Probe (check line 61 of the http-service-screenshot.nse script).
 
 <h2>Requirements</h2>
 
