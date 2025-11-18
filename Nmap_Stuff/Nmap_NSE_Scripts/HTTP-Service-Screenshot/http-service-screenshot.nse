@@ -3,6 +3,7 @@ local shortport = require "shortport"
 local http = require "http"
 local os = require "os"
 local nmap = require "nmap"
+local sslcert = require "sslcert"
 
 description = [[
 Custom script: capture HTTP/HTTPS screenshots + WhatWeb enumeration,
@@ -20,7 +21,6 @@ portrule = function(host, port)
         or (port.version and port.version.product and port.version.product:match("http"))
 end
 
--- NEW: safe HTML-escaping to prevent XSS
 local function escape_html(str)
     if not str then return "" end
     return (str
@@ -32,55 +32,71 @@ local function escape_html(str)
     )
 end
 
--- storage container used by postrule
+-- Storage for postrule
 nmap.registry.http_services = nmap.registry.http_services or {}
 
 action = function(host, port)
     local ip = host.ip
 
-    --
-    -- Determine HTTP vs HTTPS
-    --
-    local is_https =
-        port.tls or
-        port.service == "https" or
-        port.version and port.version.service == "https" or
-        port.number == 443
+    --------------------------------------------------------------------
+    -- ROBUST HTTPS DETECTION (FIXED)
+    --------------------------------------------------------------------
+    local is_https = false
 
+    -- Nmap version info
+    if port.version then
+        if port.version.tunnel == "ssl" then
+            is_https = true
+        elseif port.version.service and port.version.service:lower():match("https") then
+            is_https = true
+        end
+    end
+
+    -- Direct service name
+    if port.service == "https" then
+        is_https = true
+    end
+
+    -- LIVE SSL PROBE (this replaces the broken http.can_use_ssl)
+    local cert_raw = sslcert.getCertificate(host, port)
+    if cert_raw then
+        is_https = true
+    end
+
+    --------------------------------------------------------------------
+    -- Build URL + filenames
+    --------------------------------------------------------------------
     local scheme = is_https and "https" or "http"
     local scheme_upper = is_https and "HTTPS" or "HTTP"
 
-    --
-    -- Build URL + filename
-    --
     local url = ("%s://%s:%d"):format(scheme, ip, port.number)
     local screenshot_file = ("%s-%s-%d.jpg"):format(scheme_upper, ip, port.number)
 
-    --
+    --------------------------------------------------------------------
     -- Run CutyCapt
-    --
+    --------------------------------------------------------------------
     local cutycapt_cmd =
         ("cutycapt --url='%s' --out='%s' --insecure"):format(url, screenshot_file)
     os.execute(cutycapt_cmd)
 
-    --
-    -- Run WhatWeb exactly as requested
-    --
+    --------------------------------------------------------------------
+    -- Run WhatWeb
+    --------------------------------------------------------------------
     local tmpfile = ("whatweb-%s-%d.tmp"):format(ip, port.number)
     local whatweb_cmd =
-        ("whatweb '%s' --color=NEVER --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0' --no-errors > '%s'"):
-        format(url, tmpfile)
+        ("whatweb '%s' --color=NEVER --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0' --no-errors > '%s'")
+        :format(url, tmpfile)
+
     os.execute(whatweb_cmd)
 
-    -- Read WhatWeb output
     local wf = io.open(tmpfile, "r")
     local whatweb_output = wf and wf:read("*all") or ""
     if wf then wf:close() end
     os.remove(tmpfile)
 
-    --
-    -- Store results for postrule
-    --
+    --------------------------------------------------------------------
+    -- Store results
+    --------------------------------------------------------------------
     table.insert(nmap.registry.http_services, {
         ip = ip,
         port = port.number,
@@ -94,35 +110,27 @@ action = function(host, port)
     return ("Captured screenshot + WhatWeb for %s"):format(url)
 end
 
-
---
--- POSTRULE — runs once after all hosts
---
+--------------------------------------------------------------------
+-- POSTRULE
+--------------------------------------------------------------------
 postrule = function()
     local all = nmap.registry.http_services
     if not all or #all == 0 then
-        return false   -- prevent Nmap stack-trace
+        return false
     end
 
-    --------------------------------------------------------------------
-    -- Write http-services-list.txt
-    --------------------------------------------------------------------
+    -- Write text list
     local list = io.open("http-services-list.txt", "w")
     for i, entry in ipairs(all) do
         list:write(entry.url)
-        if i < #all then
-            list:write("\n")
-        end
+        if i < #all then list:write("\n") end
     end
     list:close()
 
-    --------------------------------------------------------------------
-    -- Generate HTML grouped by IP
-    --------------------------------------------------------------------
+    -- Write HTML
     local html = io.open("http-services.html", "w")
     html:write("<html>\n<h1>HTTP Services</h1>\n")
 
-    -- group entries by IP
     local grouped = {}
     for _, e in ipairs(all) do
         grouped[e.ip] = grouped[e.ip] or {}
@@ -135,9 +143,7 @@ postrule = function()
 
         for _, e in ipairs(entries) do
             html:write(("<h2>%s</h2>\n"):format(e.url))
-
             html:write(escape_html(e.whatweb):gsub("\n", "<br>") .. "<br>\n")
-
             html:write(("<img src=\"%s\">\n<br><br>\n"):format(e.screenshot))
         end
 
@@ -147,5 +153,5 @@ postrule = function()
     html:write("</html>")
     html:close()
 
-    return false   -- FIXES NMAP STACKTRACE (postrule must return boolean)
+    return false
 end
