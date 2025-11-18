@@ -57,7 +57,6 @@ action = function(host, port)
         is_https = true
     end
 
-    -- LIVE SSL PROBE (this replaces the broken http.can_use_ssl)
     local cert_raw = sslcert.getCertificate(host, port)
     if cert_raw then
         is_https = true
