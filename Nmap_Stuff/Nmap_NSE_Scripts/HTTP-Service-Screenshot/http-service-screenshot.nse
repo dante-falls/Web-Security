@@ -39,7 +39,7 @@ action = function(host, port)
     local ip = host.ip
 
     --------------------------------------------------------------------
-    -- ROBUST HTTPS DETECTION (FIXED)
+    -- ROBUST HTTPS DETECTION
     --------------------------------------------------------------------
     local is_https = false
 
@@ -57,6 +57,7 @@ action = function(host, port)
         is_https = true
     end
 
+    -- LIVE SSL PROBE
     local cert_raw = sslcert.getCertificate(host, port)
     if cert_raw then
         is_https = true
