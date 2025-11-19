@@ -45,8 +45,8 @@ link to http-service-screenshot.nse: https://github.com/dante-falls/Web-Security
 
 <h3>Syntax</h3>
 
-1. <mark>Service Scan Top 1000 Ports</mark>: sudo nmap -sV --script http-service-screenshot -Pn --open TARGET_IP
-2. <mark>Service Scan Specific Ports</mark>: sudo nmap -sV --script http-service-screenshot -p 22,80,443,8081,8082 -Pn --open TARGET_IP
+1. <mark>Service Scan Top 1000 Ports</mark>: nmap -sV --script http-service-screenshot -Pn --open TARGET_IP
+2. <mark>Service Scan Specific Ports</mark>: nmap -sV --script http-service-screenshot -p 22,80,443,8081,8082 -Pn --open TARGET_IP
 
 <img width="1223" height="703" alt="http-service-screenshot-commandline-syntax" src="https://github.com/user-attachments/assets/8dc90345-355c-4677-a5b0-766154d773d2" />
 
