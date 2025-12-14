@@ -90,3 +90,14 @@ from -e:4:in `<main>'
 
 Otherwise, you'll need to manually test different language-specific payloads and study how they are interpreted by the template engine. Using a process of elimination based on which syntax appears to be valid or invalid, you can narrow down the options quicker than you might think. A common way of doing this is to inject arbitrary mathematical operations using syntax from different template engines. You can then observe whether they are successfully evaluated. To help with this process, you can use a decision tree similar to the following:
 Template decision tree
+
+<h2>Exploitation</h2>
+
+Once you have identified the specific templating engine, you can use resources like PayloadsAlltheThings to find payloads specific to the engine. In the below image from an example lab environment, notice we are able to run 'cat /etc/passwd' on the target system using SSTI payloads specific to the vulnerable Ruby Templating Engine.
+
+<img width="1406" height="663" alt="basic-ssti-ruby-template-engine-remote-code-execution" src="https://github.com/user-attachments/assets/cd250c20-21fb-43cb-a225-5c3e77e7a1ff" />
+
+
+
+
+
