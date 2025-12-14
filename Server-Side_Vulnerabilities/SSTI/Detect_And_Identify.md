@@ -84,5 +84,9 @@ from /usr/lib/ruby/2.5.0/erb.rb:876:in `result'
 from -e:4:in `<main>'
 ```
 
+<img width="1416" height="602" alt="basic-ssti-ruby-template-engine-error-message" src="https://github.com/user-attachments/assets/a0302e66-09df-458e-9992-8c261ddd1690" />
+
+
+
 Otherwise, you'll need to manually test different language-specific payloads and study how they are interpreted by the template engine. Using a process of elimination based on which syntax appears to be valid or invalid, you can narrow down the options quicker than you might think. A common way of doing this is to inject arbitrary mathematical operations using syntax from different template engines. You can then observe whether they are successfully evaluated. To help with this process, you can use a decision tree similar to the following:
 Template decision tree
