@@ -22,7 +22,7 @@ There isn't much functionality, but it's a blog application that allows users to
 <h2>All Object Identifiers Are UUIDs</h2>
 
 I tried to make the application feel decently realistic to a modern day web application, so the object identifiers are all Universally Unique Identifiers (UUIDs). The fact that all the IDORs require an un-guessable object identifier will of course
-affect the attack complexity. We will talk about that later on in the **Impact** section.
+affect the attack complexity.
 
 <h2>Your Mission</h2>
 
