@@ -83,6 +83,8 @@ Host: 127.0.0.1:8001
 Cookie: sessionId=42ea262c-4f9f-43b1-8a75-0d40886b33c4
 </code>
 <img width="1413" height="633" alt="user-b-can-view-user-a-postId-UUID-value-via-api-request" src="https://github.com/user-attachments/assets/596808c8-b720-420a-a973-9d9b89132407" />
+  <li>The Attacker can also view the Victim's postId in the URL when viewing the post in the browser. See image below.</li>
+  <img width="1906" height="358" alt="attacker-views-victim-postId-in-url" src="https://github.com/user-attachments/assets/fe62d328-26fd-4913-b69b-ec83a2a65211" />
 </ol>
 
 <h1>Bug Bounty Report</h1>
