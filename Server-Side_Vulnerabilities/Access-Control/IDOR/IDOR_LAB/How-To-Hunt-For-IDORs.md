@@ -13,6 +13,19 @@ can be highlighted as green in Burpsuite History, and User-B's requests can be h
 
 <mark>I have ran into a few instances where PwnFox caused me to identify a false positive for an IDOR. You should always verify your IDOR by logging into each test account on separate machines and checking if the IDOR is still reproducible.</mark>
 
+
+<h1>Reading JavaScript Files To Find API Requests</h1>
+
+JavaScript files are a goldmine when testing for IDORs. You can read through JavaScript files in order to find API Requests and "hidden" endpoints. If you can't find any JavaScript files, try filtering for the API
+endpoint in your Proxy HTTP History and also filtering for JavaScript files, only. You can also filter for parameter names, like postId, commentId, etc. For example, see the image below where I filter for JavaScript Files Only and also filter for the string "/api/posts/update". In the image, notice we find the /static/api.js file that defines all the API requests for the IDOR Lab.
+
+<img width="1901" height="725" alt="filtering-for-javascript-files" src="https://github.com/user-attachments/assets/566e2381-3961-48a1-a89e-04152b243bc3" />
+
+
+After locating a JavaScript file with some API Endpoints, we can analyze the JavaScript file and figure out how to send requests to each of the endpoints. Analyze the image below of the /static/api.js file defining how to update a post via the API.
+
+<img width="1409" height="628" alt="analyzing-the-api-js-file" src="https://github.com/user-attachments/assets/78aba07e-7d44-4b28-a6eb-ea56cdeb01ac" />
+
 <h2>Identifying API Requests With The Canary Technique</h2>
 
 I believe that some IDORs are not identified because testers are not properly identifying every request where their input is used by the back-end server, especially in cases where API documentation is not available. To properly identify where your
@@ -86,6 +99,7 @@ Cookie: sessionId=42ea262c-4f9f-43b1-8a75-0d40886b33c4
   <li>The Attacker can also view the Victim's postId in the URL when viewing the post in the browser. See image below.</li>
   <img width="1906" height="358" alt="attacker-views-victim-postId-in-url" src="https://github.com/user-attachments/assets/fe62d328-26fd-4913-b69b-ec83a2a65211" />
 </ol>
+
 
 <h1>Bug Bounty Report</h1>
 
