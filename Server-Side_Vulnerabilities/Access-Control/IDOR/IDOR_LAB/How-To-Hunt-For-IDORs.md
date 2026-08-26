@@ -35,7 +35,7 @@ To identify an IDOR, we need to test all the functionality we can reach.
 
 <h3>Testing Post Management For IDORs</h3>
 
-For the IDOR lab, we know we can create posts, so lets start by testing the post management process. Follow this process:
+For the IDOR lab, we know we can create posts, so lets start by testing the post management process. User-A will be our Victim account and User-B will be our Attacker account. Follow this process:
 
 <ol>
   <li>Start the IDOR lab application</li>
@@ -60,7 +60,7 @@ For the IDOR lab, we know we can create posts, so lets start by testing the post
   <li>Remove the Canary filter in Burpsuite History and then refresh the page on http://127.0.0.1:8001/dashboard as User-B. Collect User-B's sessionId from one of User-B's requests in Burpsuite History</li>
   <img width="1909" height="785" alt="collecting-user-b-sessionId-cookie" src="https://github.com/user-attachments/assets/3ca99dad-9beb-4260-996c-9edf96c47f17" />
   <li>As User-B, open Burpsuite Repeater and resend the POST request to update User-A's post, this is the POST request we sent to Burpsuite Repeater in Step 10. <mark>Make sure you replace User-A's sessionId with User-B's sessionId
-    so we correctly test using User-B's session</mark></li>
+    so we are correctly test using User-B's session</mark></li>
   <img width="1412" height="675" alt="user-b-successfully-updates-user-a-post" src="https://github.com/user-attachments/assets/be4ce388-18e7-4720-92f1-25f56fa64e29" />
   <li>As User-B, notice we get a 200 Response from the POST request we sent in Step 13 to update User-A's post.</li>
   <li>As User-A, refresh the page that is displaying your post and notice User-B successfully updated your post</li>
