@@ -23,7 +23,7 @@ input, you can see where and how the front end processes your user input.
 The same rules apply for testing for IDORs. You want to use searchable user input, or Canaries, so you can search for the string in Burpsuite History and see exactly what API requests your Canary is used in. This can be useful in instances where you
 don't have access to API documentation.
 
-For example, when you create a request to create a post in the IDOR lab, you can write the post title as **"User-A-Post-Title-20394237179029034907234079891723"** and then filter for the numeric string **20394237179029034907234079891723** in Burpsuite
+For example, when you send a request to create a post in the IDOR lab, you can write the post title as **"User-A-Post-Title-20394237179029034907234079891723"** and then filter for the numeric string **20394237179029034907234079891723** in Burpsuite
 History in order to see what requests the string **20394237179029034907234079891723** shows up in. Sometimes, the backend server processes your user input in multiple requests, so if you can filter for your Canary then you can see all requests where
 your Canary is used. See example image below where we filter for our Canary in Burpsuite History and view all the requests where our Canary is used in.
 
