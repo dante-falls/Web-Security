@@ -68,7 +68,7 @@ For the IDOR lab, we know we can create posts, so lets start by testing the post
   <li>We have now successfully identified an IDOR that allows users to update other user's posts.</li>
 </ol>
 
-<h1>What's Next - Can The Attacker Access The Victim's Object Identifier In Order To Exploit The IDOR</h1>
+<h1>Can The Attacker Access The Victim's Object Identifier In Order To Exploit The IDOR</h1>
 
 After identifying an IDOR, you want to check if the Attacker can view the Victim's Object Identifier that the Attacker requires to exploit the IDOR. If the Attacker can gather the Victim's Object Identifier, then the Attack Complexity for the IDOR
 is low. In other words, it is easy for an Attacker to exploit the IDOR and update other user's posts because all users on the blog application can see other user's postId values.
