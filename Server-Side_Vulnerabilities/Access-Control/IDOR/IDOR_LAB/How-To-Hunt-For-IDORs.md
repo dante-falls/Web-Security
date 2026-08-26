@@ -56,7 +56,7 @@ For the IDOR lab, we know we can create posts, so lets start by testing the post
   <li>Open Burpsuite HTTP History and filter for the Canary you used to create User-A's post. You should see the POST request sent to /api/posts/update that updated User-A's post. Send this request to Burpsuite Repeater</li>
   <img width="1906" height="308" alt="canary-filter-idor-lab" src="https://github.com/user-attachments/assets/609ee32b-c553-4c4a-a314-4d94c361e51e" />
   <img width="1420" height="815" alt="idor-lab-request-user-a-update-post" src="https://github.com/user-attachments/assets/8a4d0041-77e8-447f-a68d-b665d6ada7fb" />
-  <li>We will now check if User-B can update User-A's. First we must collect User-B's sessionId cookie.</li>
+  <li>We will now check if User-B can update User-A's post, but first we must collect User-B's sessionId cookie.</li>
   <li>Remove the Canary filter in Burpsuite History and then refresh the page on http://127.0.0.1:8001/dashboard as User-B. Collect User-B's sessionId from one of User-B's requests in Burpsuite History</li>
   <img width="1909" height="785" alt="collecting-user-b-sessionId-cookie" src="https://github.com/user-attachments/assets/3ca99dad-9beb-4260-996c-9edf96c47f17" />
   <li>As User-B, open Burpsuite Repeater and resend the POST request to update User-A's post, this is the POST request we sent to Burpsuite Repeater in Step 10. <mark>Make sure you replace User-A's sessionId with User-B's sessionId
