@@ -103,4 +103,4 @@ Cookie: sessionId=42ea262c-4f9f-43b1-8a75-0d40886b33c4
 
 <h1>Bug Bounty Report</h1>
 
-Now that we have identified an IDOR, it's time to submit our finding as a bug bounty report. I will do this in the "Writing-A-Report.md" section
+Now that we have identified an IDOR, it's time to submit our finding as a mock, bug bounty report. See the report at https://github.com/dante-falls/Web-Security/blob/main/Server-Side_Vulnerabilities/Access-Control/IDOR/IDOR_LAB/Writing-A-Report.md
