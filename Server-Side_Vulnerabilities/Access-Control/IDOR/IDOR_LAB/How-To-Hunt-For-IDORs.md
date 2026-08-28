@@ -81,6 +81,13 @@ For the IDOR lab, we know we can create posts, so lets start by testing the post
   <li>We have now successfully identified an IDOR that allows users to update other user's posts.</li>
 </ol>
 
+<h1>Can The IDOR Be Exploited  While Unauthenticated?</h1>
+
+If the IDOR can be exploited without authenticating to the web application then this lowers the Attack Complexity because the Attacker would not need to have any permissions to exploit the IDOR. You should check to see if the IDOR can be exploited without logging into the web application. Lets do that now, try sending the request to update User-A's post without including a sessionId cookie in the request. Notice in the below image that we get a 401 Unauthorized Response because the server is correctly verifying if we are authenticated before processing the request.
+
+<img width="1416" height="633" alt="unauthenticated-test" src="https://github.com/user-attachments/assets/442287a8-ebd2-42e7-8f1f-fb85cb846631" />
+
+
 <h1>Can The Attacker Access The Victim's Object Identifier In Order To Exploit The IDOR</h1>
 
 After identifying an IDOR, you want to check if the Attacker can view the Victim's Object Identifier that the Attacker requires to exploit the IDOR. If the Attacker can gather the Victim's Object Identifier, then the Attack Complexity for the IDOR
