@@ -106,6 +106,14 @@ Cookie: sessionId=42ea262c-4f9f-43b1-8a75-0d40886b33c4
   <img width="1906" height="358" alt="attacker-views-victim-postId-in-url" src="https://github.com/user-attachments/assets/fe62d328-26fd-4913-b69b-ec83a2a65211" />
 </ol>
 
+<h1>Is The Object Identifier Iterable?</h1>
+
+When you discover an IDOR, you want to check if the object identifier is an iterable value. Even if the object identifier is a UUID (or a different type of complex value) you should still try an iterable integer in the request
+and see if the server accepts the request.
+
+In our case, the postId is a Universally Unique Identifier (UUID), which is not an iterable value. If the postId were an iterable value, like "postId":1, "postId":2 or "postId":67 then we could use a tool like FFUF to enumerate through object identifiers, effecting many, or all posts on the platform.
+
+If the IDOR you discover requires an object identifer that is an iterable value, this increases the severity of the bug because when the IDOR is exploited, many different user's data can be viewed, or modified.
 
 <h1>Bug Bounty Report</h1>
 
