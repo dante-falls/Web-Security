@@ -92,7 +92,7 @@ If the IDOR can be exploited without authenticating to the web application then 
 After identifying an IDOR, you want to check if the Attacker can view the Victim's Object Identifier that the Attacker requires to exploit the IDOR. If the Attacker can gather the Victim's Object Identifier, then the Attack Complexity for the IDOR
 is low. In other words, it is easy for an Attacker to exploit the IDOR and update other user's posts because all users on the blog application can see other user's postId values.
 
-Lets check if User-B can view the Victim's postId. Follow this process:
+Lets check if the Attacker can view the Victim's postId. Follow this process:
 
 <ol>
   <li>As User-B, send the following GET request and notice you can see User-A's postId in the response. This confirms that User-B can access the required UUID values needed to exploit the IDOR</li>
