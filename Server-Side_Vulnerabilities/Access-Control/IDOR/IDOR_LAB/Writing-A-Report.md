@@ -37,8 +37,7 @@ authorization check to verify if the authenticated user is the owner of the post
 
 <h2>Impact</h2>
 
-This IDOR affects the Integrity of user's posts on http://127.0.0.1:8001. An authenticated attacker can update other user's posts without the victim's consent, or knowledge. This can lead to wide-spread data manipulation on the platform. 
-If enough user's posts are updated without their consent, this can lead to massive user trust-loss in the platform.
+This IDOR affects the Integrity of user's posts on http://127.0.0.1:8001. An authenticated attacker can update other user's posts without the victim's consent, or knowledge. This can lead to wide-spread data manipulation on the platform. If enough user's posts are updated without their consent, this can lead to massive user trust-erosion in the platform.
 
 <h2>Attack Complexity</h2>
 
