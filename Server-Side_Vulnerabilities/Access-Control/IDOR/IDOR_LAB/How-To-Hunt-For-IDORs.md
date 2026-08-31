@@ -109,11 +109,15 @@ Cookie: sessionId=42ea262c-4f9f-43b1-8a75-0d40886b33c4
 <h1>Is The Object Identifier Iterable?</h1>
 
 When you discover an IDOR, you want to check if the object identifier is an iterable value. Even if the object identifier is a UUID (or a different type of complex value) you should still try an iterable integer in the request
-and see if the server accepts the request.
+and see if the server accepts the request. Sometimes your object will also have an iterable object identifier, you can search through Burpsuite HTTP History and check for this. Becareful not to modify any data other then data owned by your test accounts when you are testing on real bug bounty targets.
 
-In our case, the postId is a Universally Unique Identifier (UUID), which is not an iterable value. If the postId were an iterable value, like "postId":1, "postId":2 or "postId":67 then we could use a tool like FFUF to enumerate through object identifiers, effecting many, or all posts on the platform.
+In our case, the postId is a Universally Unique Identifier (UUID), which is not an iterable value. If the postId were an iterable value, like "postId":1, "postId":2 or "postId":67 then we could use a tool like FFUF to enumerate through object identifiers, effecting many, or all posts on the platform. 
 
 If the IDOR you discover requires an object identifer that is an iterable value, this increases the severity of the bug because when the IDOR is exploited, many different user's data can be viewed, or modified.
+
+View the below image of the Bugcrowd VRT Version 1.19 that shows how the type of Object Identifier can affect the technical severity level of an IDOR.
+
+<img width="1549" height="763" alt="bugcrowd-IDOR-vrt" src="https://github.com/user-attachments/assets/3e7afd43-fce0-4294-84ae-7669f061609d" />
 
 <h1>Bug Bounty Report</h1>
 
