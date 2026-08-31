@@ -55,4 +55,8 @@ Here is the application file structure. See image below.
 
 <img width="1079" height="739" alt="idor-lab-file-tree" src="https://github.com/user-attachments/assets/f04fabea-3194-46e9-8656-cd1aef6711a0" />
 
+<h1>Hunting For IDORs</h1>
+
+Now lets begin hunting for IDORs. Check out my IDOR Hunting Notes at https://github.com/dante-falls/Web-Security/blob/main/Server-Side_Vulnerabilities/Access-Control/IDOR/IDOR_LAB/How-To-Hunt-For-IDORs.md
+
 
