@@ -16,6 +16,12 @@ Now we can practice our Bug Bounty Report Writing by writing a mock report for t
   <li><b>Images and/or a Video Proof Of Concept showing visual proof of the bug and the steps taken to verify the bug</b></li>
 </ol>
 
+<h2>IDOR Classification</h2>
+
+Below is the Bugcrowd Vulnerability Rating Taxonomy (VRT) Version 1.19 for IDORs. Most programs will have their own buttons to choose the type and severity of the IDOR, but the Bugcrowd VRT is a good example.
+
+<img width="1549" height="763" alt="bugcrowd-IDOR-vrt" src="https://github.com/user-attachments/assets/c118adaa-1dff-4c52-ad9d-b1f84cf161b2" />
+
 <mark>Now let's write the IDOR report</mark>
 
 <h2>Title</h2>
@@ -60,7 +66,7 @@ To reproduce the IDOR, you must have 2 user accounts on http://127.0.0.1:8001. U
   <img width="1674" height="860" alt="reproduction-step-6-image" src="https://github.com/user-attachments/assets/b56df77d-1567-484c-baaa-d40ced851c4e" />
   <li>User-B will now update User-A's post. Continue with the instructions</li>
   <li>As User-B, send the following GET request in order to collect the Victim's postId.</li>
-  <ul><li>You must replace the {ENTER_ATTACKER_sessionId_COOKIE_HERE} placeholder with the Attacker's sessionId cookie. You can find this in Burpsuite History in requests sent by the Attacker user.</li></ul>
+  <ul><li>You must replace the {ENTER_ATTACKER_sessionId_COOKIE_HERE} placeholder with the Attacker's sessionId cookie. You can find this in Burpsuite HTTP History in requests sent by the Attacker user.</li></ul>
   <code>
 GET /api/posts/list HTTP/1.1
 Host: 127.0.0.1:8001
@@ -69,7 +75,7 @@ Cookie: sessionId={ENTER_ATTACKER_sessionId_COOKIE_HERE}
   <img width="1414" height="683" alt="reproduction-step-8-image" src="https://github.com/user-attachments/assets/4a750fcc-b77e-4ab3-8a76-407aebd8362c" />
   <li>As User-B, send the following POST request in order to update User-A's post. Notice you get a 200 response, indicating User-B successfully updated User-A's post.</li>
   <ul>
-    <li>You must replace the {ENTER_ATTACKER_sessionId_COOKIE_HERE} placeholder with the Attacker's sessionId cookie. You can find this in Burpsuite History in requests sent by the Attacker user.</li>
+    <li>You must replace the {ENTER_ATTACKER_sessionId_COOKIE_HERE} placeholder with the Attacker's sessionId cookie. You can find this in Burpsuite HTTP History in requests sent by the Attacker user.</li>
     <li>You must replace the {ENTER_VICTIM_postId_HERE} placeholder with the Victim's postId we collected in Step 8.</li>
   </ul>
   <code>
