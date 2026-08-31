@@ -109,7 +109,7 @@ Cookie: sessionId=42ea262c-4f9f-43b1-8a75-0d40886b33c4
 <h1>Is The Object Identifier Iterable?</h1>
 
 When you discover an IDOR, you want to check if the object identifier is an iterable value. Even if the object identifier is a UUID (or a different type of complex value) you should still try an iterable integer in the request
-and see if the server accepts the request. Sometimes your object will also have an iterable object identifier, you can search through Burpsuite HTTP History and check for this. Becareful not to modify any data other then data owned by your test accounts when you are testing on real bug bounty targets.
+and see if the server accepts the request. Sometimes your object will also have an iterable object identifier, you can search through Burpsuite HTTP History and check for this. <mark>Becareful not to modify any data other then data owned by your test accounts when you are testing on real bug bounty targets.</mark>
 
 In our case, the postId is a Universally Unique Identifier (UUID), which is not an iterable value. If the postId were an iterable value, like "postId":1, "postId":2 or "postId":67 then we could use a tool like FFUF to enumerate through object identifiers, effecting many, or all posts on the platform. 
 
