@@ -30,5 +30,7 @@ it returns. This can be reversed by setting the spaces to 0. Of course you'll wa
 
 <img width="1416" height="633" alt="server-side-pp-poc-json-spaces-with-spaces" src="https://github.com/user-attachments/assets/674dd978-2066-4336-a1ae-1532c664ef27" />
 
+This article by Gareth Heyes at Portswigger shows some great non-destructive testing methods [Server Side Prototype Pollution Testing Methods](https://portswigger.net/research/server-side-prototype-pollution)
+
 
 
