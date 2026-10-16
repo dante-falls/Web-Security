@@ -90,7 +90,50 @@ Here's an example of a JWK in a JWT Header:
 </ol>
 
 
+<h2>Injecting self-signed JWTs via the jku parameter</h2>
+
+Some servers let you use the jku (JWK Set URL) header parameter to reference a JWK Set containing the key. When verifying the signature, the server fetches the relevant key from this URL.
+
+<ol>
+    <li>Generate a new key</li>
+    <img width="1912" height="698" alt="generate-new-rsa-key-2" src="https://github.com/user-attachments/assets/79975139-78c2-4cea-8ca6-850e79d0567a" />
+    <li>Host JWK Set On Your Server</li>
+    <img width="1337" height="858" alt="hosting-jwk-set" src="https://github.com/user-attachments/assets/8422f3f7-5ca7-4811-a649-39c959e9f34f" />
+    <li>Modify your JWT to impersonate administrator (update "sub" header), add a jku (JWK Set URL) pointing to your JWK Set, and update the kid parameter value to match your key id. Lastly sign your payload with your new key</li>
+    <li>Use your new JWT Token to access /my-account and notice you are authenticated as the administrator</li>
+    <img width="1420" height="688" alt="impersonating-admin-with-injected-jku-header-param" src="https://github.com/user-attachments/assets/36e0d0c6-f9f0-4a92-a07e-374cec506eed" />
+</ol>
+
+<h2>Injecting self-signed JWTs via the kid parameter</h2>
+
+JSON Web Tokens (JWTs) often include a kid (Key ID) header parameter to help servers identify which cryptographic key to use for signature verification. Because the JWS specification does not strictly define the format of this identifier, developers frequently use arbitrary strings or file references, making the parameter susceptible to directory traversal vulnerabilities. If an attacker manipulates the kid parameter to point to an arbitrary file on the server's filesystem, they can force the application to use that file as its verification key.
+
+This security flaw becomes particularly critical when a server supports symmetric signing algorithms, such as HS256. Attackers can exploit this by directing the kid parameter to a predictable, static file—such as the empty /dev/null file found on most Linux systems—and then signing the forged token with a matching empty string. Consequently, the server validates the untrusted signature successfully, allowing unauthorized access and full compromise of the token-based authentication mechanism.
+
+<img width="1857" height="683" alt="path-traversal-in-jwt-kid-header-parameter-points-server-to-dev-null" src="https://github.com/user-attachments/assets/e1d9c37f-64fa-404b-b77a-61c770569b0b" />
+
+<h2>How To Prevent JWT Attacks</h2>
+
+You can protect your own websites against many of the attacks we've covered by taking the following high-level measures:
+
+<ul>
+    <li>Use an up-to-date library for handling JWTs and make sure your developers fully understand how it works, along with any security implications. Modern libraries make it more difficult for you to inadvertently implement them insecurely, but this isn't foolproof due to the inherent flexibility of the related specifications.</li>
+    <li>Make sure that you perform robust signature verification on any JWTs that you receive, and account for edge-cases such as JWTs signed using unexpected algorithms.</li>
+    <li>Enforce a strict whitelist of permitted hosts for the jku header.</li>
+    <li>Make sure that you're not vulnerable to path traversal or SQL injection via the kid header parameter.</li>
+    <li>Always set an expiration date for any tokens that you issue.</li>
+    <li>Avoid sending tokens in URL parameters where possible.</li>
+    <li>Include the aud (audience) claim (or similar) to specify the intended recipient of the token. This prevents it from being used on different websites.</li>
+    <li>Enable the issuing server to revoke tokens (on logout, for example)</li>
+</ul>
 
 
+
+
+
+    
+
+
+   
   
 
