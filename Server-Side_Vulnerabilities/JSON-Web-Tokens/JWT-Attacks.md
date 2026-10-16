@@ -60,7 +60,7 @@ When implementing JWT applications, developers sometimes make mistakes like forg
 These user-controllable parameters each tell the recipient server which key to use when verifying the signature.
 
 
-<h2>Injecting self-signed JWTs via the jwk parameter</h2>
+<h2>Injecting self-signed JWTs via the jwk header parameter</h2>
 
 The JSON Web Signature (JWS) specification describes an optional jwk header parameter, which servers can use to embed their public key directly within the token itself in JWK format. A JWK (JSON Web Key) is a standardized format for representing keys as a JSON object.
 
