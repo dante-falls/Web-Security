@@ -20,3 +20,31 @@ Here is an example of an Introspection query:
 See the below image of a GraphQL Introspection query and the server's response
 
 <img width="1412" height="632" alt="graphql-introspection" src="https://github.com/user-attachments/assets/51210780-7f22-46ca-ace3-21c1854898c6" />
+
+<h2>Query Names Only</h2>
+
+```
+query IntrospectQueries {
+  __schema {
+    queryType {
+      fields {
+        name
+      }
+    }
+  }
+}
+```
+
+<h2>Mutation Names Only</h2>
+
+```
+query IntrospectMutations {
+  __schema {
+    mutationType {
+      fields {
+        name
+      }
+    }
+  }
+}
+```
