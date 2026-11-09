@@ -52,5 +52,3 @@ query IntrospectMutations {
 <h2>Mapping The GraphQL Operations</h2>
 
 After you collect the introspection query response, you can map out the graphql operations (the queries and mutations). You can use python tools to do this, ask AI, or of course figure it out the old-fashioned way.
-
-<img width="1511" height="820" alt="using-a-python-tool-to-map-out-graphql-operations-from-the-introspection-response-text" src="https://github.com/user-attachments/assets/60cd475b-b665-4280-abde-15187711480a" />
