@@ -36,7 +36,7 @@ csrf=dkwNtPM6ySXFHe886VGnSFB4Kgz1Bzrz&postId=2&comment=testComment6942031337&nam
 ```
 
 3. Using the information from Steps 1 and 2, we can create a script that will make the site administrator post their cookies as a comment. Session cookies do not have the Http-Only security attribute, so this cookie can be
-   accessed by javascript on the page. Post the following script as a blog comment on one of the blog posts and when the site administrator reads the post, the stored xss will execute in their browser and they will post their
+   accessed by javascript on the page. Post the following script as a blog comment on postId=1 and when the site administrator reads the comment, the stored xss will execute in their browser and they will post their
    cookies as a comment on postId=1
 
 ```
@@ -79,8 +79,7 @@ csrf=dkwNtPM6ySXFHe886VGnSFB4Kgz1Bzrz&postId=2&comment=testComment6942031337&nam
 <img width="1295" height="893" alt="blog-application-stored-xss-payload-to-post-session-cookie-as-blog-comment" src="https://github.com/user-attachments/assets/caa51e20-8663-4f54-9ccc-dc9f0ee38199" />
 
 
-4. Use Burpsuite Repeater to make a GET request to the page where you made the site administrator post their session cookie as a blog comment. If we view the page in our browser, the xss will trigger in our browser and you will
-   accidently post your session cookie as a blog comment, as well. Notice all of the site administrator's (secret cookie and session cookie) are in the response as blog comments.
+4. After posting the script as a comment, use Burpsuite Repeater to make a GET request to the page where you made the site administrator post their session cookie as a blog comment. If we view the page in our browser, the xss    will trigger in our browser and you will accidently post your session cookie as a blog comment, as well. Notice all of the site administrator's (secret cookie and session cookie) are in the response as blog comments.
 
    <img width="1415" height="634" alt="stored-xss-execution-successful-and-admin-session-cookie-and-secret-cookie-posted-as-blog-comment" src="https://github.com/user-attachments/assets/1f72067e-1a60-4a21-8897-6b76b5c9a223" />
 
