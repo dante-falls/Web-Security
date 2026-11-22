@@ -2,7 +2,7 @@
 
 The target is a TryHackMe Lab, so we can safely test the purposefully vulnerable Node.js environment.
 
-The application is vulnerable to insecure Node.js deserialization because attacker-controlled input supplied through the 'email' parameter is processed by a deserialization mechanism that recognizes the '_$$ND_FUNC$$_'
+The Node.js application is vulnerable to insecure deserialization because attacker-controlled input supplied through the 'email' parameter is processed by a deserialization mechanism that recognizes the '_$$ND_FUNC$$_'
 serialization marker and reconstructs attacker-supplied JavaScript functions. 
 
 **By supplying a serialized function and invoking it with '()', arbitrary JavaScript can be executed within the Node.js process**
